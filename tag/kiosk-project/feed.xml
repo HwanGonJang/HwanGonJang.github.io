@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://hwangonjang.github.io/tag/kiosk-project/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-02-01T13:16:20+09:00</updated>
+  <id>https://hwangonjang.github.io/tag/kiosk-project/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Gon’s Portfolio | </title>
+  
+
+  
+    <subtitle>장환곤의 포트폴리오</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">1. Camp51.9 Kiosk Project-시작 그리고 Web Application 웹 앱</title>
+      <link href="https://hwangonjang.github.io/KioskProject-start.md" rel="alternate" type="text/html" title="1. Camp51.9 Kiosk Project-시작 그리고 Web Application 웹 앱" />
+      <published>2021-02-01T01:40:00+09:00</published>
+      <updated>2021-02-01T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/KioskProject-start.md</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/KioskProject-start.md">&lt;h1 id=&quot;camp519_kioskproject&quot;&gt;Camp51.9_KioskProject&lt;/h1&gt;
+
+&lt;p&gt;html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트.  &lt;strong&gt;2020/11/25 ~ 진행중&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+
+&lt;p&gt;html 공부를 시작하기로 했습니다. 지금 목표로 삼고있는 방향은 html 같은 디자인이나 프론트엔드 개발쪽은 아니지만 IT, 인터넷 환경에서 가장 기본이 되는 부분이기에 적어도 숙지는 하고 있어야 한다고 생각했습니다. 물론 지루하게 책만 보면서 공부할 생각은 아닙니다. 고등학교에서 배운 것들 중에 하나가 처음 공부하는 부분에서는 우선 개발부터 시작하면서 익숙해지는 것이 가장 효율적이면서 재미도 찾을 수 있는 방법이라는 것을 알고 있으니까요ㅎㅎ&lt;/p&gt;
+
+&lt;p&gt;그런의미에서 제가 일하고 있는 모교 영등포고등학교의 메이커 스페이스 Camp51.9의 시설 이용을 위한 키오스크 웹 어플리케이션을 개발하기로 했습니다. 물론 코로나 바이러스로 출입과 이용 시간을 기록하는 것이 필수가 되었기에 출입 시간을 기록할 수 있도록 개발할 것입니다. 이를통해 단순하게 이름과 출입시간만 기록할 수 있었던 기존에 사용하던 웹 앱에서 사용자, 이용하는 시설 혹은 행사의 종류, 이용 시간과 퇴장 시간까지 모두 기록 할수 있도록 하겠습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공부와 경험을 동시에! 일석이조라는 말을 여기에서 쓰는 것이겠죠?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시작&quot;&gt;시작&lt;/h2&gt;
+
+&lt;p&gt;매니저의 입장에서 본 저희 캠프의 이용 순서는 이렇습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;체온 측정을 안내해주고 측정을 해드린 후 수기 작성을 받습니다.&lt;/li&gt;
+  &lt;li&gt;이를 확인한 후 위에서 이야기한 기존의 웹 앱 시스템에 이름과 인원 소속을 입력할 수 있도록 안내합니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;체온 측정과 수기 작성 웹 앱에 이용시간 등록이 모두 나뉘어져 있어서 불편한점이 많고 제가 가끔 입장하시는 분들을 확인하지 못하는 때에는 위의 모든것을 작성하지 못할 때도 많습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그래서 프로젝트에 조금 더 추가하기로 했습니다. 바로 체온 측정까지 자동화 하도록 하는 것이죠! 최근에 공부하고 있는 tensorflow를 활용하여 마스크 감지 인공지능을 만들고 아두이노로 체온 측정기를 만들어 연동하면 여러 건물에서 흔히 볼 수 있는 체온 측정기를 사용료 없이 멋지게 만들 수 있을 것 같습니다. (완성 후엔 또 html과 연동하는 겁니다!)&lt;/p&gt;
+
+&lt;p&gt;전체적인 틀을 잡았으니 이제 세부적인 요소와 툴들을 정하도록 하겠습니다. 시작할때는 이 분야에 완전히 지식이 없어서 주현쌤(은사님이자 캠프운영자십니다!)에게 여쭈어봤고, 또 제가 공부하고 싶은 부분들을 고려하여 툴과 개발방향을 정했습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML, CSS, JavaScript
+    &lt;ul&gt;
+      &lt;li&gt;기본적인 웹 앱 개발 툴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Firebase&lt;/li&gt;
+  &lt;li&gt;Google에서 제공하는 실시간 데이터베이스 서비스를  자바스크립트와 연동하여 출입시간과 사용자 이용정보를 저장하고 입출력 할 것입니다.&lt;/li&gt;
+  &lt;li&gt;Google Sheet
+    &lt;ul&gt;
+      &lt;li&gt;Google 스프레드시트를 자바스크립트와 연동하여 활용하여 주현 쌤 결재에 사용할 수 있도록 사용자 정보와 출입시간을 깔끔하게 정리할 것입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Arduino
+    &lt;ul&gt;
+      &lt;li&gt;적외선 체온 센서를 활용하여 사용자들이 쉽게 체온을 측정할 수 있도록 자동화 할 것입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Python
+    &lt;ul&gt;
+      &lt;li&gt;tensorflow를 활용하여 마스크 감지 인공지능을 함께 설치해 줄 것입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;이제 개발 방향과 툴도 정했으니 개발을 시작해보도록 합시다! (사실 개발이라는 가면을 쓴 공부지만..)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;ps. 사실 티스토리를 시작한 날짜는 2021/01/04이고 제가 공부를 시작한 날짜는 2020/11/25 이기에 어느정도 개발이 진행되어 있는 상태입니다. 따라서 이 글은 현재 개발 상태에서 부터 앞으로의 과정을 설명하도록 하겠습니다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;웹-어플리케이션-부분&quot;&gt;웹 어플리케이션 부분&lt;/h2&gt;
+
+&lt;p&gt;이번 개발의 목적인 html 부분입니다. 우선 어떤 식으로 개발할지 설계했습니다. Camp51.9에서 필요한 기능은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로그인 화면(default)&lt;/li&gt;
+  &lt;li&gt;회원가입 화면&lt;/li&gt;
+  &lt;li&gt;이용 종류 선택 화면&lt;/li&gt;
+  &lt;li&gt;시설 선택 화면&lt;/li&gt;
+  &lt;li&gt;장비 선택 화면(외부인 이용 페이지)&lt;/li&gt;
+  &lt;li&gt;행사 선택 화면&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기타 이용사유 화면&lt;/p&gt;
+
+    &lt;p&gt;로그인 창을 기준으로 서로 연결되도록 만들 생각입니다. (사실 만들었습니다.)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;로그인-화면&quot;&gt;로그인 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로그인 화면입니다. 로그인, 퇴장, 회원가입으로 이어지는 기본 화면으로 꾸몄습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\loginCamp.png&quot; alt=&quot;loginCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로그인 페이지에서 아이디를 입력하고 Login 버튼을 누르면 확인 팝업이 실행되고 시설 종류 선택 화면으로 이어집니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\loginCampPop.png&quot; alt=&quot;loginCampPop&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;회원가입-화면&quot;&gt;회원가입 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;회원 가입 페이지입니다. 처음 이용하는 고객은 회원가입을 한 후에 이용가능합니다.
+    &lt;ul&gt;
+      &lt;li&gt;고객 정보는 자동으로 파이어베이스에 저장되어 입출력이 가능합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\signupCamp.png&quot; alt=&quot;signupCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;이용-종류-선택-화면&quot;&gt;이용 종류 선택 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이용 종류 선택 화면입니다. 사용 사유에 맞게 선택합니다.
+    &lt;ul&gt;
+      &lt;li&gt;로그인 정보에 따라 현재 사용중인 유저의 이름이 출력됩니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\reservationCamp.png&quot; alt=&quot;reservationCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;시설-이용-화면&quot;&gt;시설 이용 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시설 이용 화면입니다. 원하는 시설을 선택하고 이용하기 버튼을 누릅니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\establishment.png&quot; alt=&quot;establishmentCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;잔여 좌석은 파이어베이스에서 자동으로 연산되어 출력됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\establishmentPop.png&quot; alt=&quot;establishmentCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;잔여 좌석이 없을 경우 이용 불가합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\deny.png&quot; width=&quot;1300px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;외부인-이용-화면&quot;&gt;외부인 이용 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;외부인 이용 페이지에서는 유료 장비를 사용할 수 있습니다. (영등포고 학생은 무료여서 따로 배치했습니다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\campEquipment.png&quot; width=&quot;1300px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;행사-화면&quot;&gt;행사 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;행사 페이지입니다. 현재 코로나 바이러스로 진행중인 행사가 없어 경고 팝업이 생성됩니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\campEvent.png&quot; width=&quot;1400px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;기타-화면&quot;&gt;기타 화면&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기타 다른 사유가 있을 때는 기타 사용 팝업이 올라옵니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\campEtc.png&quot; width=&quot;1300px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 기본적인 html의 화면 틀은 잡혔습니다. html 소스코드는 제 github에서 확인하실 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;이제 파이어베이스와 구글 시트에 연동한 모습과 방법을 보겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;firebase--google-sheet&quot;&gt;Firebase &amp;amp; Google Sheet&lt;/h2&gt;
+
+&lt;p&gt;추후 작성 에정.&lt;/p&gt;
+
+&lt;p&gt;앞으로 꾸준히 올리도록 하겠습니다. 감사합니다!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="Kiosk Project" />
+      
+
+      
+        <summary type="html">Camp51.9_KioskProject</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>
