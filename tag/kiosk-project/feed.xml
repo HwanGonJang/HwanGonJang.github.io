@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hwangonjang.github.io/tag/kiosk-project/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-01T17:29:23+09:00</updated>
+  <updated>2021-02-02T12:02:21+09:00</updated>
   <id>https://hwangonjang.github.io/tag/kiosk-project/feed.xml</id>
 
   
@@ -121,13 +121,13 @@
   &lt;li&gt;로그인 화면입니다. 로그인, 퇴장, 회원가입으로 이어지는 기본 화면으로 꾸몄습니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\loginCamp.png&quot; alt=&quot;loginCamp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545325-8e0bf400-654c-11eb-8fb8-b9bb9d172cb6.png&quot; alt=&quot;loginCamp&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;로그인 페이지에서 아이디를 입력하고 Login 버튼을 누르면 확인 팝업이 실행되고 시설 종류 선택 화면으로 이어집니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\loginCampPop.png&quot; alt=&quot;loginCampPop&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545351-99f7b600-654c-11eb-9855-7e5b6571b12e.png&quot; alt=&quot;loginCampPop&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;회원가입-화면&quot;&gt;회원가입 화면&lt;/h4&gt;
 
@@ -139,7 +139,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\signupCamp.png&quot; alt=&quot;signupCamp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545359-9d8b3d00-654c-11eb-992b-793312a4c8e9.png&quot; alt=&quot;signupCamp&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;이용-종류-선택-화면&quot;&gt;이용 종류 선택 화면&lt;/h4&gt;
 
@@ -151,7 +151,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\reservationCamp.png&quot; alt=&quot;reservationCamp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545382-a845d200-654c-11eb-973c-d5923b70aeed.png&quot; alt=&quot;reservationCamp&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;시설-이용-화면&quot;&gt;시설 이용 화면&lt;/h4&gt;
 
@@ -159,19 +159,19 @@
   &lt;li&gt;시설 이용 화면입니다. 원하는 시설을 선택하고 이용하기 버튼을 누릅니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\establishment.png&quot; alt=&quot;establishmentCamp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545405-b3006700-654c-11eb-96ed-8287ac801a43.png&quot; alt=&quot;establishment&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;잔여 좌석은 파이어베이스에서 자동으로 연산되어 출력됩니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\establishmentPop.png&quot; alt=&quot;establishmentCamp&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545422-b693ee00-654c-11eb-9494-bb7e943febb8.png&quot; alt=&quot;establishmentPop&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;잔여 좌석이 없을 경우 이용 불가합니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\deny.png&quot; width=&quot;1300px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545451-bf84bf80-654c-11eb-8dfc-2c961cada711.png&quot; alt=&quot;deny&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;외부인-이용-화면&quot;&gt;외부인 이용 화면&lt;/h4&gt;
 
@@ -179,7 +179,7 @@
   &lt;li&gt;외부인 이용 페이지에서는 유료 장비를 사용할 수 있습니다. (영등포고 학생은 무료여서 따로 배치했습니다.)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\campEquipment.png&quot; width=&quot;1300px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545474-c7dcfa80-654c-11eb-9c54-b85268c20e0f.png&quot; alt=&quot;campEquipment&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;행사-화면&quot;&gt;행사 화면&lt;/h4&gt;
 
@@ -187,7 +187,7 @@
   &lt;li&gt;행사 페이지입니다. 현재 코로나 바이러스로 진행중인 행사가 없어 경고 팝업이 생성됩니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\campEvent.png&quot; width=&quot;1400px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545495-d0cdcc00-654c-11eb-8950-c5173498c18c.png&quot; alt=&quot;campEvent&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;기타-화면&quot;&gt;기타 화면&lt;/h4&gt;
 
@@ -195,7 +195,7 @@
   &lt;li&gt;기타 다른 사유가 있을 때는 기타 사용 팝업이 올라옵니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;C:\htmlProject\Camp51.9 Kiosk Pic\campEtc.png&quot; width=&quot;1300px&quot; height=&quot;1300px&quot; alt=&quot;deny&quot; /&gt;&amp;lt;/img&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/33739448/106545503-d4f9e980-654c-11eb-8c38-746967bcb188.png&quot; alt=&quot;campEtc&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;이렇게 기본적인 html의 화면 틀은 잡혔습니다. html 소스코드는 제 github에서 확인하실 수 있습니다.&lt;/p&gt;
 
