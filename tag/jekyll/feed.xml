@@ -2,10 +2,10 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" >
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
-  <link href="https://hwangonjang.github.io/tag/jekyll/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-02-02T12:02:21+09:00</updated>
-  <id>https://hwangonjang.github.io/tag/jekyll/feed.xml</id>
+  <link href="https://hggona.github.io/tag/jekyll/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hggona.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-01-04T16:05:41+09:00</updated>
+  <id>https://hggona.github.io/tag/jekyll/feed.xml</id>
 
   
   
@@ -33,13 +33,12 @@
   
     <entry>
       <title type="html">jekyll 강좌(1) - jekyll 기본</title>
-      <link href="https://hwangonjang.github.io/jekyll-basic" rel="alternate" type="text/html" title="jekyll 강좌(1) - jekyll 기본" />
+      <link href="https://hggona.github.io/jekyll-basic" rel="alternate" type="text/html" title="jekyll 강좌(1) - jekyll 기본" />
       <published>2021-01-04T01:40:00+09:00</published>
       <updated>2021-01-04T01:40:00+09:00</updated>
-      <id>https://hwangonjang.github.io/jekyll-basic</id>
-      <content type="html" xml:base="https://hwangonjang.github.io/jekyll-basic">&lt;h1 id=&quot;camp519_kioskproject&quot;&gt;Camp51.9_KioskProject&lt;/h1&gt;
-
-&lt;p&gt;html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트.  &lt;strong&gt;2020/11/25 ~ 진행중&lt;/strong&gt;&lt;/p&gt;</content>
+      <id>https://hggona.github.io/jekyll-basic</id>
+      <content type="html" xml:base="https://hggona.github.io/jekyll-basic">&lt;p&gt;#지킬 태그의 테스트 글입니다.
+테스트입니다.&lt;/p&gt;</content>
 
       
       
@@ -60,7 +59,7 @@
       
 
       
-        <summary type="html">Camp51.9_KioskProject</summary>
+        <summary type="html">#지킬 태그의 테스트 글입니다. 테스트입니다.</summary>
       
 
       
