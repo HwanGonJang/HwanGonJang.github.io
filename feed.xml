@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hwangonjang.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" /><updated>2021-02-25T10:08:49+09:00</updated><id>https://hwangonjang.github.io/</id><title type="html">Gon’s Portfolio</title><subtitle>장환곤의 포트폴리오</subtitle><entry><title type="html">Camp51.9 Kiosk Project (4)Google Spread Sheet 연동</title><link href="https://hwangonjang.github.io/KioskProject04" rel="alternate" type="text/html" title="Camp51.9 Kiosk Project (4)Google Spread Sheet 연동" /><published>2021-02-25T01:40:00+09:00</published><updated>2021-02-25T01:40:00+09:00</updated><id>https://hwangonjang.github.io/KioskProject04</id><content type="html" xml:base="https://hwangonjang.github.io/KioskProject04">&lt;h1 id=&quot;camp519-kiosk-project-4google-spread-sheet-연동&quot;&gt;Camp51.9 Kiosk Project (4)Google Spread Sheet 연동&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hwangonjang.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" /><updated>2021-08-14T20:16:18+09:00</updated><id>https://hwangonjang.github.io/</id><title type="html">Gon’s Portfolio</title><subtitle>장환곤의 포트폴리오</subtitle><entry><title type="html">Camp51.9 Kiosk Project (4)Google Spread Sheet 연동</title><link href="https://hwangonjang.github.io/KioskProject04" rel="alternate" type="text/html" title="Camp51.9 Kiosk Project (4)Google Spread Sheet 연동" /><published>2021-02-25T01:40:00+09:00</published><updated>2021-02-25T01:40:00+09:00</updated><id>https://hwangonjang.github.io/KioskProject04</id><content type="html" xml:base="https://hwangonjang.github.io/KioskProject04">&lt;h1 id=&quot;camp519-kiosk-project-4google-spread-sheet-연동&quot;&gt;Camp51.9 Kiosk Project (4)Google Spread Sheet 연동&lt;/h1&gt;
 
 &lt;h2 id=&quot;camp519-kiosk-project&quot;&gt;Camp51.9 Kiosk Project&lt;/h2&gt;
 
-&lt;p&gt;html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. &lt;strong&gt;2020/11/25 ~ 진행중&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. &lt;strong&gt;2020/11/25 ~ 2020/02/15&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
 
@@ -462,7 +462,7 @@
     &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;#파이썬 태그의 2번째 테스트 글입니다.
+&lt;p&gt;#파이썬 태그의 2번째 테스트 글입니다!!
 테스트입니다.&lt;/p&gt;</content><author><name>HwanGonJang</name></author><category term="python" /><summary type="html">Python 강좌는 여러 절로 구성되어 있습니다. Python 강좌(1) - Python 기본 Python 강좌(2) - Python 제어문</summary></entry><entry><title type="html">Python 강좌(1) - Python 기본</title><link href="https://hwangonjang.github.io/python-basic" rel="alternate" type="text/html" title="Python 강좌(1) - Python 기본" /><published>2021-01-04T01:40:00+09:00</published><updated>2021-01-04T01:40:00+09:00</updated><id>https://hwangonjang.github.io/python-basic</id><content type="html" xml:base="https://hwangonjang.github.io/python-basic">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 강좌는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;

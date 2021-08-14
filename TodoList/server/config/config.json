@@ -1,0 +1,8 @@
+{
+    "development" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "password",
+        "database" : "Todolist"
+    }
+}
