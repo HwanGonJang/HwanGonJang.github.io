@@ -24,6 +24,12 @@
     
     <!--Web font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+    <!-- syntax.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
 
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
@@ -50,7 +56,7 @@
     <meta property="og:site_name" content="Gon's Portfolio" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Camp51.9 Kiosk Project (2)체온 입력칸 추가" />
-    <meta property="og:description" content="Camp51.9_KioskProject (2)체온 입력칸 추가 html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. 2020/11/25 ~ 진행중 개요 저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 그리고 전체적인 구상에서 자동으로 체온을 측정해주는 기능을 넣으려고 했었는데 만들어 놓고 보니 체온을 입력하는 칸을" />
+    <meta property="og:description" content="Camp51.9_KioskProject (2)체온 입력칸 추가 html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. 개요 저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 초기의 화면과 기능 구성은 처음 웹 개발을 공부하는 것이기 때문에 약 2개월 동안 가장 기본적인 틀을 잡았습니다. 어쩌면" />
     <meta property="og:url" content="https://HwanGonJang.github.io/KioskProject02" />
     <meta property="og:image" content="https://HwanGonJang.github.io/assets/built/images/loginCamp.png" />
     <meta property="article:publisher" content="https://www.facebook.com/" />
@@ -60,7 +66,7 @@
     <meta property="article:tag" content="Html" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Camp51.9 Kiosk Project (2)체온 입력칸 추가" />
-    <meta name="twitter:description" content="Camp51.9_KioskProject (2)체온 입력칸 추가 html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. 2020/11/25 ~ 진행중 개요 저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 그리고 전체적인 구상에서 자동으로 체온을 측정해주는 기능을 넣으려고 했었는데 만들어 놓고 보니 체온을 입력하는 칸을" />
+    <meta name="twitter:description" content="Camp51.9_KioskProject (2)체온 입력칸 추가 html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. 개요 저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 초기의 화면과 기능 구성은 처음 웹 개발을 공부하는 것이기 때문에 약 2개월 동안 가장 기본적인 틀을 잡았습니다. 어쩌면" />
     <meta name="twitter:url" content="https://HwanGonJang.github.io/" />
     <meta name="twitter:image" content="https://HwanGonJang.github.io/assets/built/images/loginCamp.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -92,7 +98,7 @@
         "@type": "WebPage",
         "@id": "https://HwanGonJang.github.io/KioskProject02"
     },
-    "description": "Camp51.9_KioskProject (2)체온 입력칸 추가 html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. 2020/11/25 ~ 진행중 개요 저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 그리고 전체적인 구상에서 자동으로 체온을 측정해주는 기능을 넣으려고 했었는데 만들어 놓고 보니 체온을 입력하는 칸을"
+    "description": "Camp51.9_KioskProject (2)체온 입력칸 추가 html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트. 개요 저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 초기의 화면과 기능 구성은 처음 웹 개발을 공부하는 것이기 때문에 약 2개월 동안 가장 기본적인 틀을 잡았습니다. 어쩌면"
 }
     </script>
 
@@ -134,6 +140,7 @@ into the {body} of the default.hbs template -->
     <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
     <li class="nav-html" role="menuitem"><a href="/tag/html/">HTML</a></li>
     <li class="nav-english" role="menuitem"><a href="/tag/english/">English</a></li>
+    <li class="nav-github" role="menuitem"><a href="/tag/github/">GitHub</a></li>
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
     </li>
@@ -191,61 +198,141 @@ into the {body} of the default.hbs template -->
                 <div class="kg-card-markdown">
                     <h1 id="camp519_kioskproject-2체온-입력칸-추가">Camp51.9_KioskProject (2)체온 입력칸 추가</h1>
 
-<p>html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트.  <strong>2020/11/25 ~ 진행중</strong></p>
+<p>html, css, javascript를 처음 공부하는 동시에 영등포고등학교 메이커스페이스 Camp51.9의 시설 이용 키오스크를 직접 개발하는 프로젝트.</p>
 
 <h2 id="개요">개요</h2>
+<p>저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 초기의  화면과 기능 구성은 처음 웹 개발을 공부하는 것이기 때문에 약 2개월 동안 가장 기본적인 틀을 잡았습니다. 어쩌면 힘들었을 수도 있지만 이 정도를 혼자서 독학하며 개발하다 보니 html에 대한 자신감이 생긴 것 같습니다. 이렇게 기본적인 틀을 잡아 주었으니 이제 살을 더할 차례입니다. 
+ 처음 개발목표에 체온 입력칸을 추가할것이라고 했습니다. 하지만 단순히 체온을 매니저가 측정해주고 직접 입력하는 것이 아닌 이용자가 자동으로 쉽게 측정할 수 있도록 아두이노와 파이썬을 활용하여 마스크 감지 인공지능 체온 측정 시스템을 구축하도록 할 것입니다.</p>
 
-<p>저번 글에서 메이커 스페이스를 위한 출입 웹 어플리케이션을 설계하고 구축하는 작업을 했습니다. 그리고 전체적인 구상에서 자동으로 체온을 측정해주는 기능을 넣으려고 했었는데 만들어 놓고 보니 체온을 입력하는 칸을 만들지 않았습니다. 그래서 이번 글에서 체온 입력칸을 추가해 주도록 하겠습니다.</p>
+<h2 id="개발-과정">개발 과정</h2>
+<p>목표하고 있는 과정은 이렇습니다.</p>
+<ol>
+  <li>이용자는 마스크를 착용한 채로 카메라 앞에 선다.</li>
+  <li>인공지능이 대상의 마스크 착용여부를 3초간 확인하고 체온측정을 진행한다.</li>
+  <li>단, 마스크를 착용하고 있지 않으면 체온측정을 진행하지 않고 초기화면으로 돌아간다.</li>
+  <li>체온측정을 마치면 자동으로 체온입력칸에 체온 정보가 입력된다.</li>
+</ol>
 
-<h2 id="시작">시작</h2>
-
-<p>체온 측정은 요즘 세상에 반드시 이루어지는 일이므로 로그인 창에서 입력할 수 있도록 만들 것입니다.</p>
+<h4 id="기술">기술</h4>
+<ul>
+  <li>Python
+    <ul>
+      <li>마스크 감지 인공지능을 구축하고 아두이노로 부터 받은 체온 측정 값을 웹에 전달합니다.</li>
+    </ul>
+  </li>
+  <li>Arduino
+    <ul>
+      <li>적외선 체온 센서를 활용하여 체온을 측정하고 파이썬 코드로 값을 전송합니다.</li>
+    </ul>
+  </li>
+  <li>javascript
+    <ul>
+      <li>파이썬 코드에서 전달 받은 체온 값을 웹에 출력해줍니다.</li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="로그인-화면-수정">로그인 화면 수정</h3>
-
 <ul>
   <li>기존 로그인 화면에서 체온 입력칸을 추가한 화면입니다.</li>
 </ul>
 
-<p><img src="https://user-images.githubusercontent.com/33739448/106684200-5d3dc480-6609-11eb-8f00-4d937ca4f3ee.png" alt="loginCamp2" /></p>
+<p><img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/h2_1.png?raw=true" /></p>
 
-<h3 id="소스코드">소스코드</h3>
+<h3 id="마스크-감지-인공지능-구축">마스크 감지 인공지능 구축</h3>
+<p>인공지능은 https://github.com/balajisrinivas/Face-Mask-Detection 이 분이 올려주신 코드와 데이터셋을 활용했습니다. 이 리포지토리를 다운 받아서 데이터셋을 학습시켜주면 .model 확장자의 결과가 나옵니다. 이 파일을 가지고 저는 다음과 같이 구축했습니다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">dbTestRef</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'Login/'</span> <span class="o">+</span> <span class="nx">userid</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nx">userid</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span>
-            <span class="nx">dbTestRef</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"write"</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" 님으로&lt;br&gt;로그인하시겠습니까?"</span><span class="p">;</span>
-            <span class="kd">var</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'tmp/'</span><span class="p">).</span><span class="kd">set</span><span class="p">({</span><span class="s2">"tmpName"</span><span class="p">:</span> <span class="nx">userid</span><span class="p">});</span>
-            <span class="kd">var</span> <span class="nx">dbTestRef</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'tmp/'</span><span class="p">)</span>
-            <span class="nx">dbTestRef</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-              <span class="kd">var</span> <span class="nx">dbTestRef1</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'Login/'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span>
-              <span class="nx">dbTestRef1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-                <span class="kd">var</span> <span class="nx">dbTestRef2</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'Establishment/'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span>
-                <span class="nx">dbTestRef2</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-                  <span class="kd">var</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">());</span>                      
-                    <span class="kd">var</span> <span class="nx">dbTestRef</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'tmp/'</span><span class="p">)</span>
-                    <span class="nx">dbTestRef</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-                      <span class="kd">var</span> <span class="nx">dbTestRef3</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'Login/'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span>
-                      <span class="nx">dbTestRef3</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-                      <span class="kd">var</span> <span class="nx">LobbyUser</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">database</span><span class="p">().</span><span class="nx">ref</span><span class="p">(</span><span class="s1">'Establishment/'</span> <span class="o">+</span> <span class="nx">data</span><span class="p">.</span><span class="nx">val</span><span class="p">()).</span><span class="kd">set</span><span class="p">({</span><span class="s2">"null"</span><span class="p">:</span> <span class="nx">cnt</span><span class="o">+</span><span class="mi">1</span><span class="p">});</span>
-                      <span class="p">})</span>
-                      <span class="p">})</span>
-                <span class="p">})</span>
-              <span class="p">})</span>
-            <span class="p">})</span>
+<p><img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/h2_3.jpg?raw=true" /></p>
+
+<h4 id="라이브러리">라이브러리</h4>
+
+<ul>
+  <li>tensorflow&gt;=1.15.2</li>
+  <li>keras==2.3.1</li>
+  <li>imutils==0.5.3</li>
+  <li>numpy==1.18.2</li>
+  <li>opencv-python==4.2.0.</li>
+  <li>matplotlib==3.2.1</li>
+  <li>scipy==1.4.1</li>
+  <li>selenium</li>
+  <li>firebase</li>
+  <li>serial	(for Arduino)</li>
+</ul>
+
+<h3 id="코드">코드</h3>
+
+<h4 id="아두이노">아두이노</h4>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">val</span><span class="o">++</span><span class="p">);</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>체온센서의 값을 읽어서 시리얼 통신으로 보내는 간단한 코드입니다.</p>
+
+<p><img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/h2_4.jpg?raw=true" /><br />
+<img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/h2_5.jpg?raw=true" /></p>
+
+<p>모두 납떔하고 레이저커터로 잘라 모양을 만들어주었습니다.</p>
+
+<h4 id="아두이노-연동python">아두이노 연동(Python)</h4>
+<p>serial 라이브러리를 사용해 다음과 같이 아두이노 보드와 연동합니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ser</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span>
+	<span class="n">port</span><span class="o">=</span><span class="s">'COM6'</span><span class="p">,</span>
+  	<span class="n">baudrate</span><span class="o">=</span><span class="mi">9600</span><span class="p">,</span>
+<span class="p">)</span>
 </code></pre></div></div>
 
-<p>자바스크립트에서 파이어베이스에 로그인 정보를 입력하는 코드입니다. 파이어베이스와 엑셀 연동 설명 글에서 자세히 설명하겠지만 간단히 보자면</p>
+<h4 id="웹-연동python">웹 연동(Python)</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">dbTestRef1</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'child_added'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+<p>selenium 라이브러리를 사용해 웹과 연동합니다. 파이썬에서 웹에 정보를 전달해야하기 때문에 파이썬에서 웹을 통제합니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="s">'chromedriver'</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"file:///C:/CampKioskSystem/htmlProject/loginCamp.html"</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>이 부분에서 .on() 함수를 통해 data 값을 파이어베이스의 특정위치에서 가져오고,  .set 명령을 통해 특정 위치에 원하는 제목과 값을 적어 넣는 방식입니다. javascript와 함께 연동하는 방법에 대해선 다음 글에서 설명하겠습니다.</p>
+<p>selenium 라이브러리로 웹을 동작하기 위해서 사용하는 브라우저인 크롬의 chromedriver를 다운로드 받아 같은 위치에 저장해야 합니다.</p>
 
-<h3 id="google-스프레드시트">Google 스프레드시트</h3>
+<h4 id="코드-수정부">코드 수정부</h4>
+<p>깃허브의 오픈 소스로 공개된 마스크 감지 인공지능 코드를 가져와서 구축하기 때문에 제 목적에 맞게 수정이 필요합니다. 인공지능이 동작하는 while문 안에 아두이노와 웹을 다루는 코드를 추가하여 수정해주었습니다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">mask</span> <span class="o">&gt;</span> <span class="n">withoutMask</span><span class="p">:</span>
+			<span class="c">#마스크착용 확률이 99% 초과라면</span>
+			<span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">withoutMask</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">&gt;</span> <span class="mi">99</span><span class="p">:</span>	
+				<span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+				<span class="k">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+				<span class="c">#cnt가 20이 되면(3초)</span>
+				<span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+					<span class="k">if</span> <span class="n">ser</span><span class="o">.</span><span class="n">readable</span><span class="p">():</span>
+                    	<span class="c">#아두이노에서 시리얼 통신으로 받은 체온값</span>
+						<span class="n">res</span> <span class="o">=</span> <span class="n">ser</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+						<span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">decode</span><span class="p">()[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>		
+						<span class="n">res</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+						<span class="c">#파이어베이스 동작부</span>
+						<span class="nb">dir</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reference</span><span class="p">(</span><span class="s">'Temperature/tempTmp'</span><span class="p">)</span>
+						<span class="nb">dir</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">'null'</span><span class="p">:</span> <span class="n">res</span><span class="p">})</span>
+						<span class="c">#체온값 로드를 위해 새로고침</span>
+						<span class="n">driver</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+						<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+				
+<span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">withoutMask</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="mi">99</span><span class="p">:</span>
+	<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/33739448/106684221-6595ff80-6609-11eb-9596-70444c80a331.png" alt="loginCampSheet" /></p>
+<p>mask는 인공지능이 계산한 마스크를 착용하고 있는 확률입니다. 쓰고있다면 99.99%로 인식하기 떄문에 99%를 기준으로 잡습니다. 만약 99% 이하라면 시간을 나타내는 cnt를 0으로 초기화하고 인공지능이 다시 확인을 시작합니다.
+ 마스크를 착용하고 3초가 지나면 파이썬에서 아두이노의 시리얼 통신을 받을 준비를 합니다. 여기서 손목으로 체온을 측정하면 아두이노가 측정 값을 시리얼로 보내고 파이썬이 자동으로 받아 res 변수에 다코딩하여 저장합니다. 그리고 저장된 값은 파이어베이스에 똑같이 저장되고 이를 웹이 가져와 출력하는 방식입니다. 이를 위해 웹을 새로고침 해줍니다.</p>
 
-<p>스프레드시트와 연동함으로써 파이어베이스와는 별개로 사용자들의 이용 정보를 깔끔하게 정리하여 월단위로 제출할 수 있도록 했습니다.</p>
+<h2 id="결과">결과</h2>
+<p>이것으로 마스크 감지 인공지능을 더한 자동 체온입력 시스템을 구축하였습니다. html을 이해하고 기존에 사용하던 기술(파이썬, 아두이노)들을 엮어서 개발하여 더 멋진 결과가 나온 것 같습니다. 다음으로는 구글의 파이어베이스와 스프레드 시트를 연동한 과정을 작성하겠습니다.</p>
+
+<p>링크는 시연영상입니다.</p>
+
+<p>https://youtu.be/Jl-NsQvFlGY</p>
+
 
                 </div>
             </section>
@@ -283,7 +370,7 @@ into the {body} of the default.hbs template -->
                             <section class="author-card-content">
                                 <h4 class="author-card-name"><a href="/author/HwanGonJang">HwanGonJang</a></h4>
                                 
-                                    <p>Soongsil Univ.</p>
+                                    <p>Soongsil Univ. 메이커스페이스 소프트웨어 매니저</p>
                                 
                             </section>
                         </section>
@@ -349,6 +436,17 @@ into the {body} of the default.hbs template -->
                                 
                                 
                                   
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/KioskProject_Final">Camp51.9 Kiosk Project (5)8개월 간의 수정과 배포</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
                                     
                                         
                                         
@@ -361,11 +459,9 @@ into the {body} of the default.hbs template -->
                                     
                                         
                                         
-                                            <li><a href="/KioskProject03-copy">Camp51.9 Kiosk Project (3)Google Firebase 연동</a></li>
+                                            <li><a href="/KioskProject03">Camp51.9 Kiosk Project (3)Google Firebase 연동</a></li>
                                         
                                     
-                                  
-                                
                                   
                                 
                                   
@@ -375,8 +471,6 @@ into the {body} of the default.hbs template -->
                                   
                                     
                                         
-                                        
-                                            <li><a href="/KioskProject-start">Camp51.9 Kiosk Project (1)시작 그리고 Web Application 웹 앱</a></li>
                                         
                                     
                                   
@@ -392,7 +486,7 @@ into the {body} of the default.hbs template -->
                         <footer class="read-next-card-footer">
                             <a href="/tag/html/">
                                 
-                                    See all 3 posts  →
+                                    See all 4 posts  →
                                 
                             </a>
                         </footer>
@@ -406,22 +500,22 @@ into the {body} of the default.hbs template -->
 
     <article class="post-card post-template">
         
-            <a class="post-card-image-link" href="/English01">
-                <div class="post-card-image" style="background-image: url(/assets/built/images/English01_WordSheet.jpg)"></div>
+            <a class="post-card-image-link" href="/KioskProject03">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/loginCamp.png)"></div>
             </a>
         
         <div class="post-card-content">
-            <a class="post-card-content-link" href="/English01">
+            <a class="post-card-content-link" href="/KioskProject03">
                 <header class="post-card-header">
                     
                         
                             
-                                <span class="post-card-tags">English</span>
+                                <span class="post-card-tags">Html</span>
                             
                         
                     
 
-                    <h2 class="post-card-title">English Shadowing (1)시작 이전과 끝의 이후까지</h2>
+                    <h2 class="post-card-title">Camp51.9 Kiosk Project (3)Google Firebase 연동</h2>
                 </header>
                 <section class="post-card-excerpt">
                     
