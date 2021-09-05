@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hwangonjang.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" /><updated>2021-09-05T17:27:48+09:00</updated><id>https://hwangonjang.github.io/</id><title type="html">Gon’s Portfolio</title><subtitle>장환곤의 포트폴리오 사이트</subtitle><entry><title type="html">Google 기술 개발 정리(GDSC)</title><link href="https://hwangonjang.github.io/google" rel="alternate" type="text/html" title="Google 기술 개발 정리(GDSC)" /><published>2021-09-01T01:40:00+09:00</published><updated>2021-09-01T01:40:00+09:00</updated><id>https://hwangonjang.github.io/google</id><content type="html" xml:base="https://hwangonjang.github.io/google">&lt;h1 id=&quot;google-기술-개발-정리gdsc&quot;&gt;Google 기술 개발 정리(GDSC)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://hwangonjang.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" /><updated>2021-09-05T22:26:21+09:00</updated><id>https://hwangonjang.github.io/</id><title type="html">Gon’s Portfolio</title><subtitle>장환곤의 포트폴리오 사이트</subtitle><entry><title type="html">Google 기술 개발 정리(GDSC)</title><link href="https://hwangonjang.github.io/google" rel="alternate" type="text/html" title="Google 기술 개발 정리(GDSC)" /><published>2021-09-01T01:40:00+09:00</published><updated>2021-09-01T01:40:00+09:00</updated><id>https://hwangonjang.github.io/google</id><content type="html" xml:base="https://hwangonjang.github.io/google">&lt;h1 id=&quot;google-기술-개발-정리gdsc&quot;&gt;Google 기술 개발 정리(GDSC)&lt;/h1&gt;
 &lt;p&gt;이 글은 GDSC 지원을 위한 구글 기술을 활용했던 제 개발들을 소개하는 페이지입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
@@ -19,7 +19,7 @@
 &lt;h4 id=&quot;wpf-예약확인-프로그램&quot;&gt;WPF 예약확인 프로그램&lt;/h4&gt;
 &lt;p&gt;출입등록 키오스크에 더하여 외부인 이용객들이 쉽게 유료 장비를 예약하고 사용하러 오실 수 있도록 하기 위한 프로젝트를 진행하였습니다. 앱에서 파이어베이스에 예약 정보를 저장하면 이 정보를 WPF 프로그램에서 받아와 갱신해주는 방식입니다. 매니저가 이용하는 프로그램으로 이용객의 정보를 확인할 수 있고 이용이 끝나면 다시 초기화 해줍니다.(C#, GCP 이용)&lt;/p&gt;
 
-&lt;p&gt;[WPF]](https://hwangonjang.github.io/wpf)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hwangonjang.github.io/wpf&quot;&gt;WPF&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;카카오톡-챗봇&quot;&gt;카카오톡 챗봇&lt;/h4&gt;
 &lt;p&gt;메이커스페이스 카카오톡 챗봇에서 파이어베이스를 이용하여 서비스를 제공했습니다.(Python)&lt;/p&gt;
