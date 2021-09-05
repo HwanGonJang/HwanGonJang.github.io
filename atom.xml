@@ -2,9 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> - Articles</title>
-    <description>장환곤의 포트폴리오</description>
+    <description>장환곤의 포트폴리오 사이트</description>
     <link>
     https://HwanGonJang.github.io</link>
+    
+      
+      <item>
+        <title>Google 기술 개발 정리(GDSC)</title>
+        
+          <description>&lt;h1 id=&quot;google-기술-개발-정리gdsc&quot;&gt;Google 기술 개발 정리(GDSC)&lt;/h1&gt;
+&lt;p&gt;이 글은 GDSC 지원을 위한 구글 기술을 활용했던 제 개발들을 소개하는 페이지입니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Sep 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/google</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/google</guid>
+      </item>
+      
     
       
       <item>
@@ -35,6 +51,100 @@
         <link>
         https://HwanGonJang.github.io/KioskProject_Final</link>
         <guid isPermaLink="true">https://HwanGonJang.github.io/KioskProject_Final</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>아두이노 스마트팜(앱인벤터)_숭실대학교 적정기술 공모전</title>
+        
+          <description>&lt;h1 id=&quot;아두이노-스마트팜앱인벤터_숭실대학교-적정기술-공모전&quot;&gt;아두이노 스마트팜(앱인벤터)_숭실대학교 적정기술 공모전&lt;/h1&gt;
+&lt;p&gt;숭실대학교 적정기술 공모전에 몽골을 위한 적정기술을 주제로 참여하여 진행한 스마트팜 프로젝트.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 30 Aug 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/smartfarm</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/smartfarm</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>예약 확인 윈도우 프로그램_WPF</title>
+        
+          <description>&lt;h1 id=&quot;예약-확인-윈도우-프로그램_wpf&quot;&gt;예약 확인 윈도우 프로그램_WPF&lt;/h1&gt;
+&lt;p&gt;메이커스페이스의 장비 예약 확인을 위한 매니저 용 프로그램 제작. (개발 중인 메이커스페이스 어플과 연동)&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 21 Aug 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/wpf</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/wpf</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>MOA React SNS 웹 만들기(SG해커톤)</title>
+        
+          <description>&lt;h1 id=&quot;moa-react-sns-웹-만들기sg해커톤&quot;&gt;MOA React SNS 웹 만들기(SG해커톤)&lt;/h1&gt;
+&lt;p&gt;숭실대학교 소프트웨어학부와 글로벌미디어학부에서 주관하는 2박 3일 해커톤 행사에서 진행한 프로젝트 &lt;strong&gt;2021/7/29~2021/7/31&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 02 Aug 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/moa</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/moa</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>컴퓨터학개론 강의</title>
+        
+          <description>&lt;h1 id=&quot;컴퓨터학개론-강의&quot;&gt;컴퓨터학개론 강의&lt;/h1&gt;
+&lt;p&gt;학교에서 배운 컴퓨터학을 바탕으로 재구성하여 고등학교 후배들을 위해 강의하는 행사.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 11 Jul 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/computerology</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/computerology</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>파이썬 워드클라우드  with colab, jupyter</title>
+        
+          <description>&lt;h1 id=&quot;파이썬-워드클라우드--with-colab-jupyter&quot;&gt;파이썬 워드클라우드  with colab, jupyter&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Mon, 28 Jun 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/wordcloud</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/wordcloud</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>카카오톡 챗봇 with Python, Apache</title>
+        
+          <description>&lt;h1 id=&quot;카카오톡-챗봇-with-python-apache&quot;&gt;카카오톡 챗봇 with Python, Apache&lt;/h1&gt;
+
+</description>
+        
+        <pubDate>Fri, 16 Apr 2021 01:40:00 +0900</pubDate>
+        <link>
+        https://HwanGonJang.github.io/kakaoChatBot</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/kakaoChatBot</guid>
       </item>
       
     
@@ -100,54 +210,49 @@
     
       
       <item>
-        <title>Python 강좌(2) - Python 기본</title>
+        <title>아두이노 스마트홈</title>
         
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 강좌는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+          <description>&lt;h1 id=&quot;smarthome_ced&quot;&gt;SmartHome_CED&lt;/h1&gt;
+&lt;p&gt;아두이노를 활용한 완성도 있는 IoT 스마트홈 구축&lt;/p&gt;
 
 </description>
         
-        <pubDate>Mon, 04 Jan 2021 01:40:00 +0900</pubDate>
+        <pubDate>Mon, 14 Dec 2020 01:40:00 +0900</pubDate>
         <link>
-        https://HwanGonJang.github.io/python-control-statement</link>
-        <guid isPermaLink="true">https://HwanGonJang.github.io/python-control-statement</guid>
+        https://HwanGonJang.github.io/smarthome</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/smarthome</guid>
       </item>
       
     
       
       <item>
-        <title>Python 강좌(1) - Python 기본</title>
+        <title>자율주행 자동차(DonkeyCar) with Raspberrypi, Python</title>
         
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;Python 강좌는 여러 절로 구성되어 있습니다. &lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-basic&quot;&gt;Python 강좌(1) - Python 기본&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;./python-control-statement&quot;&gt;Python 강좌(2) - Python 제어문&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+          <description>&lt;h1 id=&quot;자율주행-자동차donkeycar-with-raspberrypi-python&quot;&gt;자율주행 자동차(DonkeyCar) with Raspberrypi, Python&lt;/h1&gt;
+&lt;p&gt;라즈베리파이를 이용한 동키카 인공지능 자율주행 자동차 구축 프로젝트.&lt;/p&gt;
 
 </description>
         
-        <pubDate>Mon, 04 Jan 2021 01:40:00 +0900</pubDate>
+        <pubDate>Sun, 18 Oct 2020 01:40:00 +0900</pubDate>
         <link>
-        https://HwanGonJang.github.io/python-basic</link>
-        <guid isPermaLink="true">https://HwanGonJang.github.io/python-basic</guid>
+        https://HwanGonJang.github.io/donkey</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/donkey</guid>
       </item>
       
     
       
       <item>
-        <title>Gettysburg Address</title>
+        <title>아두이노 수화번역기</title>
         
-          <description>&lt;p&gt;Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.&lt;/p&gt;
+          <description>&lt;h1 id=&quot;아두이노-수화번역기&quot;&gt;아두이노 수화번역기&lt;/h1&gt;
+&lt;p&gt;아두이노와 구부림 센서를 활용한 청각장애인들을 위한 수화번역기(숭실대학교 아두이노 공모전 (대상)&lt;/p&gt;
 
 </description>
         
-        <pubDate>Thu, 19 Nov 1863 19:18:00 +0900</pubDate>
+        <pubDate>Tue, 22 Sep 2020 01:40:00 +0900</pubDate>
         <link>
-        https://HwanGonJang.github.io/gettysburg-address</link>
-        <guid isPermaLink="true">https://HwanGonJang.github.io/gettysburg-address</guid>
+        https://HwanGonJang.github.io/signlanguage</link>
+        <guid isPermaLink="true">https://HwanGonJang.github.io/signlanguage</guid>
       </item>
       
     
