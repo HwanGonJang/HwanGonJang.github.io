@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hwangonjang.github.io/tag/google/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-09-05T22:33:45+09:00</updated>
+  <updated>2021-09-06T10:27:41+09:00</updated>
   <id>https://hwangonjang.github.io/tag/google/feed.xml</id>
 
   
@@ -50,13 +50,13 @@
 &lt;p&gt;구글에서는 마이크로소프트의 오피스와 같이 ppt, 워드, 엑셀의 기능을 간편하게 이용할 수 있는 기능을 제공합니다. 저는 엑셀과 같은 구글의 스프레드 시트를 제 프로젝트와 연동하여 저희 메이커스페이스 이용객 출입 정보를 자동으로 저장하고 있습니다. 현재까지 계속 이용하고 있으며 현재 600명의 정보가 누적되었습니다.&lt;/p&gt;
 
 &lt;h4 id=&quot;출입등록-키오스크-프로젝트&quot;&gt;출입등록 키오스크 프로젝트&lt;/h4&gt;
-&lt;p&gt;메이커 스페이스의 매니저로 일하고 있던 제가 출입등록 키오스크를 개발하는 프로젝트를 진행하였습니다. 이용자의 정보와 날짜, 시간등을 파이어베이스에 저장하여 개발하였습니다.(javascript)&lt;/p&gt;
+&lt;p&gt;메이커 스페이스의 매니저로 일하고 있던 제가 출입등록 키오스크를 개발하는 프로젝트를 진행하였습니다. 이용자의 정보와 날짜, 시간등을 파이어베이스에 저장하고 출입등록 정보가 스프레드 시트에 정리되도록 개발하였습니다.(javascript)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://hwangonjang.github.io/KioskProject03&quot;&gt;키오스크 프로젝트3&lt;/a&gt;
 &lt;a href=&quot;https://hwangonjang.github.io/KioskProject04&quot;&gt;키오스크 프로젝트4&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;wpf-예약확인-프로그램&quot;&gt;WPF 예약확인 프로그램&lt;/h4&gt;
-&lt;p&gt;출입등록 키오스크에 더하여 외부인 이용객들이 쉽게 유료 장비를 예약하고 사용하러 오실 수 있도록 하기 위한 프로젝트를 진행하였습니다. 앱에서 파이어베이스에 예약 정보를 저장하면 이 정보를 WPF 프로그램에서 받아와 갱신해주는 방식입니다. 매니저가 이용하는 프로그램으로 이용객의 정보를 확인할 수 있고 이용이 끝나면 다시 초기화 해줍니다.(C#, GCP 이용)&lt;/p&gt;
+&lt;p&gt;출입등록 키오스크에 더하여 외부인 이용객들이 쉽게 유료 장비를 예약하고 사용하러 오실 수 있도록 하기 위한 프로젝트를 진행하였습니다. 앱에서 파이어베이스에 예약 정보를 저장하면 이 정보를 WPF 프로그램에서 받아와 갱신해주는 방식입니다. 매니저가 이용하는 프로그램으로 이용객의 정보를 확인할 수 있고 이용이 끝나면 다시 초기화 해줍니다. 스프레드 시트 테스트에서는 GCP를 이용했습니다.(C#, GCP 이용)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://hwangonjang.github.io/wpf&quot;&gt;WPF&lt;/a&gt;&lt;/p&gt;
 
