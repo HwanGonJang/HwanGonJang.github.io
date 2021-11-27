@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hwangonjang.github.io/tag/r/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-11-28T01:01:53+09:00</updated>
+  <updated>2021-11-28T01:19:59+09:00</updated>
   <id>https://hwangonjang.github.io/tag/r/feed.xml</id>
 
   
@@ -34,8 +34,8 @@
     <entry>
       <title type="html">R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구</title>
       <link href="https://hwangonjang.github.io/r_1" rel="alternate" type="text/html" title="R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구" />
-      <published>2020-08-14T01:40:00+09:00</published>
-      <updated>2020-08-14T01:40:00+09:00</updated>
+      <published>2021-08-14T01:40:00+09:00</published>
+      <updated>2021-08-14T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/r_1</id>
       <content type="html" xml:base="https://hwangonjang.github.io/r_1">&lt;h1 id=&quot;r과-구글-트렌드를-활용한-코로나-관련-검색어-탐구&quot;&gt;R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구&lt;/h1&gt;
 
@@ -157,8 +157,8 @@ ggplot(data=df1_exam_corona, aes(x=Day, y=Corona, group=1)) + geom_line()
     <entry>
       <title type="html">An Empirical Study of Software Reuse with Special Attention to Ada 논문 리뷰</title>
       <link href="https://hwangonjang.github.io/st_1m" rel="alternate" type="text/html" title="An Empirical Study of Software Reuse with Special Attention to Ada 논문 리뷰" />
-      <published>2020-06-15T01:40:00+09:00</published>
-      <updated>2020-06-15T01:40:00+09:00</updated>
+      <published>2021-06-15T01:40:00+09:00</published>
+      <updated>2021-06-15T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/st_1m</id>
       <content type="html" xml:base="https://hwangonjang.github.io/st_1m">&lt;h1 id=&quot;an-empirical-study-of-software-reuse-with-special-attention-to-ada-논문-리뷰&quot;&gt;An Empirical Study of Software Reuse with Special Attention to Ada 논문 리뷰&lt;/h1&gt;
 
