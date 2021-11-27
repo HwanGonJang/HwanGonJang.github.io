@@ -1,0 +1,123 @@
+<h1 id="java-객체지향-프로그래밍-복습-3-car-rental-class-구현">[JAVA] 객체지향 프로그래밍 복습 (3) Car Rental Class 구현</h1>
+
+<h2 id="자바">자바</h2>
+
+<p>자바(Java)는 C언어에 객체 지향적 기능을 추가하여 만든 C++과는 달리, 처음부터 객체 지향 언어로 개발된 프로그래밍 언어입니다. 자바는 자바 가상 머신(JVM, Java Virtual Machine)을 사용하여, 운영체제와는 독립적으로 동작할 수 있습니다. 따라서 자바는 어느 운영체제에서나 같은 형태로 실행될 수 있습니다. 바로 이러한 점이 수많은 개발자로 하여금 자바를 사용하게 하는 원동력이 되고 있습니다. 현재 자바는 전 세계에서 가장 많이 사용하는 프로그래밍 언어 중 하나입니다.</p>
+
+<h2 id="car-클래스">Car 클래스</h2>
+
+<p>자동차 렌탈 클래스를 작성합니다. 멤버 변수로는 자동차 number, 자동차 id, 자동차 status, 자동차 구매일자, 자동차 마일리지가 있고, id는 중복검사를 진행한 랜덤값이 저장되고 구매일자는 SimpleDateForamt 클래스를 이용하여 저장합니다. 자동차 상태(status)에는 enum으로 available, checkedOut, inService, discarded, sold 의 5가지 상태가 있습니다. 초기 정보는 생성자를 통해 저장합니다.</p>
+
+<p>제공하는 기능은 자동차 정보 출력, 자동차 정보 변경, 최근 일자 순으로 정렬 기능이 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">LAB03</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.ParseException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
+	
+	<span class="kd">public</span> <span class="kd">enum</span> <span class="n">StatusType</span> <span class="o">{</span>
+		<span class="n">available</span><span class="o">,</span> <span class="n">checkedOut</span><span class="o">,</span> <span class="n">inService</span><span class="o">,</span> <span class="n">discarded</span><span class="o">,</span> <span class="n">sold</span>
+	<span class="o">}</span>
+	
+	<span class="kt">int</span> <span class="n">carID</span><span class="o">;</span>
+	<span class="n">StatusType</span> <span class="n">status</span><span class="o">;</span>
+	<span class="n">Date</span> <span class="n">datePurchased</span><span class="o">;</span>
+	<span class="kt">int</span> <span class="n">mileage</span><span class="o">;</span>
+	
+	<span class="n">SimpleDateFormat</span> <span class="n">dateFormat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
+	
+	<span class="n">Car</span><span class="o">(</span><span class="n">Date</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">carID</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">9000</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1000</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">StatusType</span><span class="o">.</span><span class="na">available</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">datePurchased</span> <span class="o">=</span> <span class="n">d</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">mileage</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMileage</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">mileage</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStatus</span><span class="o">(</span><span class="n">StatusType</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printinfo</span><span class="o">()</span> <span class="o">{</span>			
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"CarID: "</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">carID</span> <span class="o">+</span> <span class="s">"\nCar Status: "</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">+</span> <span class="s">"\nPurchased Date: "</span> <span class="o">+</span> <span class="n">dateFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">datePurchased</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\nCar Mileage: "</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">mileage</span><span class="o">);</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ParseException</span> <span class="o">{</span>
+		<span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+		<span class="n">SimpleDateFormat</span> <span class="n">dateFormat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd"</span><span class="o">);</span>
+		
+		<span class="n">Date</span> <span class="n">date1</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"2021-03-21"</span><span class="o">);</span>
+		<span class="n">Date</span> <span class="n">date2</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"2021-03-22"</span><span class="o">);</span>
+		<span class="n">Date</span> <span class="n">date3</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"2021-03-23"</span><span class="o">);</span>
+		<span class="n">Date</span> <span class="n">date4</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"2021-03-24"</span><span class="o">);</span>
+		<span class="n">Date</span> <span class="n">date5</span> <span class="o">=</span> <span class="n">dateFormat</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"2021-03-25"</span><span class="o">);</span>
+		
+		<span class="n">Car</span><span class="o">[]</span> <span class="n">carArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">[</span><span class="mi">5</span><span class="o">];</span>
+		<span class="n">carArray</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">date1</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+		<span class="n">carArray</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">date2</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+		<span class="n">carArray</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">date3</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
+		<span class="n">carArray</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">date4</span><span class="o">,</span> <span class="mi">1000</span><span class="o">);</span>
+		<span class="n">carArray</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">date5</span><span class="o">,</span> <span class="mi">10000</span><span class="o">);</span>
+		
+		<span class="c1">//CarID 중복 검사.</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">carID</span> <span class="o">==</span> <span class="n">carArray</span><span class="o">[</span><span class="n">j</span><span class="o">].</span><span class="na">carID</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">carID</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">9000</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1000</span><span class="o">;</span>		<span class="c1">//중복 시 재설정.</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+			
+		<span class="o">}</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"자동차 정보 출력"</span><span class="o">);</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Car Number: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">"번"</span><span class="o">);</span>
+			<span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">printinfo</span><span class="o">();</span>
+		<span class="o">}</span>
+		
+		<span class="c1">//1번 자동차 상태 checkedOut으로 변경.</span>
+		<span class="n">carArray</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">setStatus</span><span class="o">(</span><span class="n">StatusType</span><span class="o">.</span><span class="na">checkedOut</span><span class="o">);</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"첫번째 자동차 정보 변경 후 출력."</span><span class="o">);</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Car Number: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">"번"</span><span class="o">);</span>
+			<span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">printinfo</span><span class="o">();</span>
+		<span class="o">}</span>
+		
+		<span class="c1">//최근 날짜 순으로 자동차 정렬.</span>
+		<span class="n">Car</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">(</span><span class="n">date1</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+				<span class="kt">int</span> <span class="n">compare</span> <span class="o">=</span> <span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">datePurchased</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">carArray</span><span class="o">[</span><span class="n">j</span><span class="o">].</span><span class="na">datePurchased</span><span class="o">);</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">compare</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">tmp</span> <span class="o">=</span> <span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+					<span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">carArray</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+					<span class="n">carArray</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+				<span class="o">}</span>
+			<span class="o">}</span>	
+		<span class="o">}</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"최근 이용 자동차 순서로 정렬 후 출력."</span><span class="o">);</span>
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Car Number: "</span> <span class="o">+</span> <span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">"번"</span><span class="o">);</span>
+			<span class="n">carArray</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">printinfo</span><span class="o">();</span>
+		<span class="o">}</span>
+				
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="결과">결과</h2>
+
+<p><img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ja_3-1.png?raw=true" /></p>
+
+<p><img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ja_3-2.png?raw=true" /></p>

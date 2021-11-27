@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>인공지능과 머신러닝, 딥러닝</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    
+    <!--Web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+    <!-- syntax.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="장환곤의 포트폴리오 사이트" />
+    <link rel="shortcut icon" href="https://HwanGonJang.github.io/assets/built/images/main.png" type="image/png" />
+    <link rel="canonical" href="https://HwanGonJang.github.io/ai_basic" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Gon's Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="인공지능과 머신러닝, 딥러닝" />
+    <meta property="og:description" content="인공지능과 머신러닝, 딥러닝 개요 인공지능 분야를 제대로 공부하기 위해 기본적인 개념들을 명확히 하기로 했습니다. GDSC Soonsil에서 AI 파트에 참여했기 때문에 앞으로는 제대로 공부를 시작하려 합니다. 공부한 사이트: https://blogs.nvidia.co.kr/2016/08/03/difference_ai_learning_machinelearning/ 1. 인공지능 인공 지능이라는 개념은 1956년 미국 다트머스 대학에 있던 존 매카시 교수가 개최한 다트머스 회의에서 처음 등장했으며, 최근 몇 년 사이" />
+    <meta property="og:url" content="https://HwanGonJang.github.io/ai_basic" />
+    <meta property="og:image" content="https://HwanGonJang.github.io/assets/built/images/paper.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2020-09-16T01:40:00+09:00" />
+    <meta property="article:modified_time" content="2020-09-16T01:40:00+09:00" />
+    <meta property="article:tag" content="Ai" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="인공지능과 머신러닝, 딥러닝" />
+    <meta name="twitter:description" content="인공지능과 머신러닝, 딥러닝 개요 인공지능 분야를 제대로 공부하기 위해 기본적인 개념들을 명확히 하기로 했습니다. GDSC Soonsil에서 AI 파트에 참여했기 때문에 앞으로는 제대로 공부를 시작하려 합니다. 공부한 사이트: https://blogs.nvidia.co.kr/2016/08/03/difference_ai_learning_machinelearning/ 1. 인공지능 인공 지능이라는 개념은 1956년 미국 다트머스 대학에 있던 존 매카시 교수가 개최한 다트머스 회의에서 처음 등장했으며, 최근 몇 년 사이" />
+    <meta name="twitter:url" content="https://HwanGonJang.github.io/" />
+    <meta name="twitter:image" content="https://HwanGonJang.github.io/assets/built/images/paper.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Gon's Portfolio" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Ai" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Gon's Portfolio",
+        "logo": "https://HwanGonJang.github.io/"
+    },
+    "url": "https://HwanGonJang.github.io/ai_basic",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://HwanGonJang.github.io/assets/built/images/paper.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://HwanGonJang.github.io/ai_basic"
+    },
+    "description": "인공지능과 머신러닝, 딥러닝 개요 인공지능 분야를 제대로 공부하기 위해 기본적인 개념들을 명확히 하기로 했습니다. GDSC Soonsil에서 AI 파트에 참여했기 때문에 앞으로는 제대로 공부를 시작하려 합니다. 공부한 사이트: https://blogs.nvidia.co.kr/2016/08/03/difference_ai_learning_machinelearning/ 1. 인공지능 인공 지능이라는 개념은 1956년 미국 다트머스 대학에 있던 존 매카시 교수가 개최한 다트머스 회의에서 처음 등장했으며, 최근 몇 년 사이"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="인공지능과 머신러닝, 딥러닝" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://HwanGonJang.github.io/">Gon's Portfolio</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-web" role="menuitem"><a href="/tag/web/">Web</a></li>
+    <li class="nav-c" role="menuitem"><a href="/tag/c/">C</a></li>
+    <li class="nav-etc" role="menuitem"><a href="/tag/etc/">etc</a></li>
+    <li class="nav-google" role="menuitem"><a href="/tag/google/">Google</a></li>
+    <li class="nav-google" role="menuitem"><a href="/tag/R/">R&통계</a></li>
+    <li class="nav-google" role="menuitem"><a href="/tag/AI/">AI</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-ai post tag-AI ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="16 September 2020">16 September 2020</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/ai/'>AI</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">인공지능과 머신러닝, 딥러닝</h1>
+            </header>
+
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/paper.png)">
+            </figure>
+            
+            -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h1 id="인공지능과-머신러닝-딥러닝">인공지능과 머신러닝, 딥러닝</h1>
+<h2 id="개요">개요</h2>
+<p>인공지능 분야를 제대로 공부하기 위해 기본적인 개념들을 명확히 하기로 했습니다. GDSC Soonsil에서 AI 파트에 참여했기 때문에 앞으로는 제대로 공부를 시작하려 합니다.</p>
+
+<p>공부한 사이트: https://blogs.nvidia.co.kr/2016/08/03/difference_ai_learning_machinelearning/</p>
+
+<h2 id="1-인공지능">1. 인공지능</h2>
+
+<p>인공 지능이라는 개념은 1956년 미국 다트머스 대학에 있던 존 매카시 교수가 개최한 다트머스 회의에서 처음 등장했으며, 최근 몇 년 사이 폭발적으로 성장하고 있는 중입니다. 특히 2015년 이후 신속하고 강력한 병렬 처리 성능을 제공하는 GPU의 도입으로 더욱 가속화되고 있습니다. 갈수록 폭발적으로 늘어나고 있는 저장 용량과 이미지, 텍스트, 매핑 데이터 등 모든 영역의 데이터가 범람하게 된 ‘빅데이터’ 시대의 도래도 이러한 성장세에 큰 영향을 미쳤습니다.
+ 1956년 당시 인공 지능의 선구자들이 꿈꾼 것은 최종적으로 인간의 지능과 유사한 특성을 가진 복잡한 컴퓨터를 제작하는 것이였습니다. 이렇듯 인간의 감각, 사고력을 지닌 채 인간처럼 생각하는 인공 지능을 ‘일반 AI(General AI)’라고 하지만, 현재의 기술 발전 수준에서 만들 수 있는 인공지능은 ‘좁은 AI(Narrow AI)’의 개념에 포함됩니다. 좁은 AI는 소셜 미디어의 이미지 분류 서비스나 얼굴 인식 기능 등과 같이 특정 작업을 인간 이상의 능력으로 해낼 수 있는 것이 특징입니다.</p>
+
+<h2 id="2-머신러닝-인공-지능을-구현하는-구체적-접근-방식">2. 머신러닝: 인공 지능을 구현하는 구체적 접근 방식</h2>
+
+<p>머신 러닝은 기본적으로 알고리즘을 이용해 데이터를 분석하고, 분석을 통해 학습하며, 학습한 내용을 기반으로 판단이나 예측을 합니다. 따라서 궁극적으로는 의사 결정 기준에 대한 구체적인 지침을 소프트웨어에 직접 코딩해 넣는 것이 아닌, 대량의 데이터와 알고리즘을 통해 컴퓨터 그 자체를 ‘학습’시켜 작업 수행 방법을 익히는 것을 목표로 합니다.</p>
+
+<p>머신 러닝은 초기 인공 지능 연구자들이 직접 제창한 개념에서 나온 것이며, 알고리즘 방식에는 의사 결정 트리 학습, 귀납 논리 프로그래밍, 클러스터링, 강화 학습, 베이지안(Bayesian) 네트워크 등이 포함됩니다. 그러나 이 중 어느 것도 최종 목표라 할 수 있는 일반 AI를 달성하진 못했으며, 초기의 머신 러닝 접근 방식으로는 좁은 AI조차 완성하기 어려운 경우도 많았던 것이 사실입니다.</p>
+
+<p>현재 머신 러닝은 컴퓨터 비전 등의 분야에서 큰 성과를 이뤄내고 있으나, 구체적인 지침이 아니더라도 인공 지능을 구현하는 과정 전반에 일정량의 코딩 작업이 수반된다는 한계점에 봉착하기도 했는데요. 가령 머신 러닝 시스템을 기반으로 정지 표지판의 이미지를 인식할 경우, 개발자는 물체의 시작과 끝 부분을 프로그램으로 식별하는 경계 감지 필터, 물체의 면을 확인하는 형상 감지, ‘S-T-O-P’와 같은 문자를 인식하는 분류기 등을 직접 코딩으로 제작해야 합니다. 이처럼 머신 러닝은 ‘코딩’된 분류기로부터 이미지를 인식하고, 알고리즘을 통해 정지 표지판을 ‘학습’하는 방식으로 작동됩니다.</p>
+
+<p>머신 러닝의 이미지 인식률은 상용화하기에 충분한 성능을 구현하지만, 안개가 끼거나 나무에 가려서 표지판이 잘 보이지 않는 특정 상황에서는 이미지 인식률이 떨어지기도 합니다. 최근까지 컴퓨터 비전과 이미지 인식이 인간의 수준으로 올라오지 못한 이유는 이 같은 인식률 문제와 잦은 오류 때문입니다.</p>
+
+<h2 id="3-딥-러닝-완전한-머신-러닝을-실현하는-기술">3. 딥 러닝: 완전한 머신 러닝을 실현하는 기술</h2>
+
+<p>초기 머신 러닝 연구자들이 만들어 낸 또 다른 알고리즘인 인공 신경망(artificial neural network)에 영감을 준 것은 인간의 뇌가 지닌 생물학적 특성, 특히 뉴런의 연결 구조였습니다. 그러나 물리적으로 근접한 어떤 뉴런이든 상호 연결이 가능한 뇌와는 달리, 인공 신경망은 레이어 연결 및 데이터 전파 방향이 일정합니다.</p>
+
+<p>예를 들어, 이미지를 수많은 타일로 잘라 신경망의 첫 번째 레이어에 입력하면, 그 뉴런들은 데이터를 다음 레이어로 전달하는 과정을 마지막 레이어에서 최종 출력이 생성될 때까지 반복합니다. 그리고 각 뉴런에는 수행하는 작업을 기준으로 입력의 정확도를 나타내는 가중치가 할당되며, 그 후 가중치를 모두 합산해 최종 출력이 결정됩니다.</p>
+
+<p>정지 표지판의 경우, 팔각형 모양, 붉은 색상, 표시 문자, 크기, 움직임 여부 등 그 이미지의 특성이 잘게 잘려 뉴런에서 ‘검사’되며, 신경망의 임무는 이것이 정지 표지판인지 여부를 식별하는 것입니다. 여기서는 충분한 데이터를 바탕으로 가중치에 따라 결과를 예측하는 ‘확률 벡터(probability vector)’가 활용됩니다.</p>
+
+<p>딥 러닝은 인공신경망에서 발전한 형태의 인공 지능으로, 뇌의 뉴런과 유사한 정보 입출력 계층을 활용해 데이터를 학습합니다. 그러나 기본적인 신경망조차 굉장한 양의 연산을 필요로 하는 탓에 딥 러닝의 상용화는 초기부터 난관에 부딪혔습니다. 그럼에도 토론토대의 제프리 힌튼(Geoffrey Hinton) 교수 연구팀과 같은 일부 기관에서는 연구를 지속했고, 슈퍼컴퓨터를 기반으로 딥 러닝 개념을 증명하는 알고리즘을 병렬화하는데 성공했습니다. 그리고 병렬 연산에 최적화된 GPU의 등장은 신경망의 연산 속도를 획기적으로 가속하며 진정한 딥 러닝 기반 인공 지능의 등장을 불러왔죠.</p>
+
+<p>신경망 네트워크는 ‘학습’ 과정에서 수많은 오답을 낼 가능성이 큽니다. 정지 표지판의 예로 돌아가서, 기상 상태, 밤낮의 변화에 관계 없이 항상 정답을 낼 수 있을 정도로 정밀하게 뉴런 입력의 가중치를 조정하려면 수백, 수천, 어쩌면 수백만 개의 이미지를 학습해야 할지도 모릅니다. 이 정도 수준의 정확도에 이르러서야 신경망이 정지 표지판을 제대로 학습했다고 볼 수 있습니다.</p>
+
+<p>2012년, 구글과 스탠퍼드대 앤드류 응(Andrew NG) 교수는 1만6,000개의 컴퓨터로 약 10억 개 이상의 신경망으로 이루어진 ‘심층신경망(Deep Neural Network)’을 구현했습니다. 이를 통해 유튜브에서 이미지 1,000만 개를 뽑아 분석한 뒤, 컴퓨터가 사람과 고양이 사진을 분류하도록 하는데 성공했습니다. 컴퓨터가 영상에 나온 고양이의 형태와 생김새를 인식하고 판단하는 과정을 스스로 학습하게 한 것입니다.</p>
+
+<p>딥 러닝으로 훈련된 시스템의 이미지 인식 능력은 이미 인간을 앞서고 있습니다. 이 밖에도 딥 러닝의 영역에는 혈액의 암세포, MRI 스캔에서의 종양 식별 능력 등이 포함됩니다. 구글의 알파고는 바둑의 기초를 배우고, 자신과 같은 AI를 상대로 반복적으로 대국을 벌이는 과정에서 그 신경망을 더욱 강화해 나갔습니다.</p>
+
+<h2 id="4-결론">4. 결론</h2>
+
+<p>즉, 딥 러닝은 머신러닝에 해당하는 개념으로 머신러닝이 상위 개념이라고 할 수 있습니다. 
+ 머신 러닝은 결국 손전등, 자동차 또는 컴퓨터 화면이 작동하는 것과 같은 방식으로 기계적 기능을 수행하는 여러 복잡한 수학/코딩입니다. ‘머신 러닝’이 가능하다는 말은 주어진 데이터로 기능을 수행하고, 시간이 지남에 따라 그 기능이 점차 향상됨을 의미합니다.
+ 이와는 달리 딥 러닝은 인공 신경망을 활용한 알고리즘 구조를 적용합니다. 따라서 필요한 데이터의 양도 방대합니다. 이는 고사양의 하드웨어를 요구한다는 것이기도 합니다.</p>
+
+<p>머신러닝은 컴퓨터에 가까운 인공지능, 딥 러닝은 사람에 가까운 인공지능이라고 생각할 수도 있을 것 같습니다.</p>
+
+                </div>
+            </section>
+
+            
+            <!-- Email subscribe form at the bottom of the page -->
+            <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Gon's Portfolio</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+            -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/me.png" alt="HwanGonJang" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/HwanGonJang">HwanGonJang</a></h4>
+                                
+                                    <p>Soongsil Univ. 메이커스페이스 소프트웨어 매니저</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/HwanGonJang">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'https://HwanGonJang.github.io/ai_basic';
+                            this.page.identifier = '/ai_basic';
+                            this.page.title = '인공지능과 머신러닝, 딥러닝';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/main.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Gon's Portfolio &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/ai/">Ai</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/ai_11m-4">11월 논문 리뷰 4주차 개념 탐구하기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/ai_11m-3">11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/ai_11m-2">11월 논문 리뷰 2주차 GAN 코드 실습 Python</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/ai/">
+                                
+                                    See all 5 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/signlanguage">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/as_6.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/signlanguage">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">C</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">아두이노 수화번역기</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/me.png" alt="HwanGonJang" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/HwanGonJang/">HwanGonJang</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/r_1">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/paper.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/r_1">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">R</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/me.png" alt="HwanGonJang" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/HwanGonJang/">HwanGonJang</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://HwanGonJang.github.io/">
+            
+            <span>Gon's Portfolio</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">인공지능과 머신러닝, 딥러닝</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EA%B3%BC+%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%2C+%EB%94%A5%EB%9F%AC%EB%8B%9D&amp;url=https://HwanGonJang.github.io/ai_basic"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://HwanGonJang.github.io/ai_basic"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://HwanGonJang.github.io/">Gon's Portfolio</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Gon's Portfolio</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

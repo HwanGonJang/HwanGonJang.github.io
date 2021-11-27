@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
+  <link href="https://hwangonjang.github.io/tag/ai/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
+  <updated>2021-11-28T01:01:53+09:00</updated>
+  <id>https://hwangonjang.github.io/tag/ai/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">Gon’s Portfolio | </title>
+  
+
+  
+    <subtitle>장환곤의 포트폴리오 사이트</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">11월 논문 리뷰 4주차 개념 탐구하기</title>
+      <link href="https://hwangonjang.github.io/ai_11m-4" rel="alternate" type="text/html" title="11월 논문 리뷰 4주차 개념 탐구하기" />
+      <published>2020-11-29T01:40:00+09:00</published>
+      <updated>2020-11-29T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/ai_11m-4</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-4">&lt;h1 id=&quot;11월-논문-리뷰-4주차-개념-탐구하기&quot;&gt;11월 논문 리뷰 4주차 개념 탐구하기&lt;/h1&gt;
+&lt;h2 id=&quot;generative-adversarial-nets-에서-사용된-개념-알아보기&quot;&gt;Generative Adversarial Nets 에서 사용된 개념 알아보기&lt;/h2&gt;
+
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+
+&lt;p&gt;GDSC Soongsil (Google Development Student Club), 숭실대학교의 GDSC 에서 제가 참여한 AI 파트는 매월 하나의 논문을 매주 리뷰하기로 했습니다. 11월 논문 리뷰는 Generative Adversarial Nets 라는 논문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-0.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;11월 부터는 위의 머신러닝 논문의 발전 방향에 맞게 논문을 리뷰합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-경사-하강-알고리즘&quot;&gt;1. 경사 하강 알고리즘&lt;/h3&gt;
+&lt;p&gt;비용 함수(Cost Function)의 비용값을 최소화 하는 파라미터 θ를 찾는 알고리즘입니다. 경사 하강 알고리즘은 비용 함수 J(θ(0),θ(1))를 최소화 하는 θ를 구하는 알고리즘으로 머신러닝에서 굉장히 폭넓게 쓰입니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;θ에 대해 임의의 초기값 즉 시작점을 잡습니다.&lt;/li&gt;
+  &lt;li&gt;그리고 J가 최소가 될때까지 θ값 갱신을 반복하여 최솟값에 도달했을 때 해당하는 θ를 찾아냅니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-1.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a 뒤에 곱해진 것은 비용함수 J의 미분값&lt;/li&gt;
+  &lt;li&gt;a = learnig rate : 갱신되는 θ 값의 속도를 결정합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-2.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같이 반복적인 갱신을 통해 최종적인 min 값에 도달하는 것이 최종 목표입니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-1-미분-값&quot;&gt;1-1. 미분 값&lt;/h4&gt;
+&lt;p&gt;미분 값은 해당 지점에서의 기울기를 의미하므로 경사 하강 알고리즘에서는 초기값을 오른쪽에 두면 갱신마다 갱신 시 θ는 감소하고, 왼쪽에 두면 갱신 시 θ는 증가합니다. 따라서 초기값의 위치에 상과없이 결국 최소값으로 수렴합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-3.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;1-2-learning-rate-학습-속도&quot;&gt;1-2. Learning rate 학습 속도&lt;/h4&gt;
+
+&lt;p&gt;만약 Learning Rate가 지나치게 작다면 최솟값에 도달하기 위해 굉장히 많은 연산이 요구됩니다. 반대로 Learning Rate가 지나치게 크다면 θ가 반대쪽을 오가며 매우 큰 거리를 이동하게 되어 최솟값에서 점점 멀어지게 됩니다. 그렇기 때문에 적절한 Learning Rate를 설정하는 것은 매우 중요합니다. Learning Rate는 속도에도 영향을 주는데, 만약 Learning Rate없이 미분값으로만 갱신을 진행하게 되면 최솟값으로 도달하지 않고, 제자리에서 진동할 수도 있기 때문에 Learning Rate를 곱하여 갱신값에 변화를 주며 최솟값에 도달하게 해야합니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-3-θ의-수렴-조건&quot;&gt;1-3. θ의 수렴 조건&lt;/h4&gt;
+
+&lt;p&gt;기울기가 0 인 점, 즉 미분값이 0인 시점에서 갱신을 멈춥니다. (갱신값의 변화가 없을 때)&lt;/p&gt;
+
+&lt;h3 id=&quot;2-kld쿨백-아리블러-발산--jsd젠슨-섀넌-발산&quot;&gt;2. KLD(쿨백-아리블러 발산),  JSD(젠슨-섀넌 발산)&lt;/h3&gt;
+&lt;p&gt;Kullback-Leibler Divergence 와 Jensen-Shannon Divergence는 서로 다른 확률 분포의 차이를 즉정하는 척도입니다. 우리가 추정한 확률 분포와 실제 확률 분포 사이의 차이가 작다면 좋은 추정이라고 할 수 있습니다.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-1-killback-leibler-divergence&quot;&gt;2-1. Killback-Leibler Divergence&lt;/h4&gt;
+&lt;p&gt;KLD는 두 모델이 얼마나 비슷하게 생겼는지를 알기 위한 척도인데, 제시한 모델이 실제 모델의 각 item들의 정보량을 얼마나 잘 보존하는지를 측정합니다. 즉, 원본 데이터가 가지고 있는 정보량을 잘 보존할 수록 원본 데이터와 비슷한 모델이라는 것입니다. item p(i)가 갖는 정보량은 다음과 같다면&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-4.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;원본 확률 분포 p와 근사된 분포 q에 대하여 i번째 item이 가진 정보량의 차이는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-5.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;p에 대하여 이러한 &lt;strong&gt;근사시 상대적 정보 손실량의 기댓값&lt;/strong&gt;을 구한 것이 바로 Killback-Leibler Divergence입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-6.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-2-jensen-shannon-divergence&quot;&gt;2-2. Jensen-Shannon Divergence&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;KLD는 근사된 확률 분포가 얼마나 원본과 비슷한지를 측정하는 척도 이외에도, 단순히 두 대등한 확률 분포가 얼마나 닮았는지를 측정하는 척도로 쓰일 수 있습니다. 그러나 위의 식에 근거하여 KLD는 역의 관계가 성립하지(Symmetric) 않습니다. 즉, D(KL)(p&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;q) != D(KL)(q&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;p) 입니다. 따라서 이 KLD를 Symmetric 하게 개량한 Jensen-Shannon Divergence를 사용합니다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-7.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같이 KLD를 개량하면 JSD(p,q) = JSD(q,p) 가 되어 두 확률 분포의 차이(distance)로서의 역할을 수행합니다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="AI" />
+      
+
+      
+        <summary type="html">11월 논문 리뷰 4주차 개념 탐구하기 Generative Adversarial Nets 에서 사용된 개념 알아보기</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기</title>
+      <link href="https://hwangonjang.github.io/ai_11m-3" rel="alternate" type="text/html" title="11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기" />
+      <published>2020-11-22T01:40:00+09:00</published>
+      <updated>2020-11-22T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/ai_11m-3</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-3">&lt;h1 id=&quot;11월-논문-리뷰-3주차-gan-수식-알고리즘-더-자세히-살펴보기&quot;&gt;11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기&lt;/h1&gt;
+&lt;h1 id=&quot;generative-adversarial-nets&quot;&gt;Generative Adversarial Nets&lt;/h1&gt;
+
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+
+&lt;p&gt;GDSC Soongsil (Google Development Student Club), 숭실대학교의 GDSC 에서 제가 참여한 AI 파트는 매월 하나의 논문을 매주 리뷰하기로 했습니다. 11월 논문 리뷰는 Generative Adversarial Nets 라는 논문입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-0.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;11월 부터는 위의 머신러닝 논문의 발전 방향에 맞게 논문을 리뷰합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;gan에서-사용된-식과-알고리즘-더-자세히-살펴보기&quot;&gt;GAN에서 사용된 식과 알고리즘 더 자세히 살펴보기&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-목적함수-v&quot;&gt;1. 목적함수 V&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;생성자 Generator는 min, 판별자 Dicriminator는 max 가 되도록 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_4-1.jpg?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-global-optimality-증명&quot;&gt;2. Global Optimality 증명&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;판별자와 생성자의 Global Optimality(최적(max,min)이 되는 값) 증명.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_4-2.jpg?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-실제-구현을-위한-알고리즘&quot;&gt;3. 실제 구현을 위한 알고리즘&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;상승(max) 방식을 통한 판별자 학습과 하강(min) 방식을 통한 생성자 학습 알고리즘.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_4-3.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4--pg가-pdata로-잘-수렴할-수-있는가에-대한-증명convex-하기-때문에-가능하다&quot;&gt;4. . Pg가 Pdata로 잘 수렴할 수 있는가에 대한 증명(Convex 하기 때문에 가능하다)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_4-4.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;V 함수에서 생성자의 분포인 Pg로 미분하면 앞 항은 상수처럼 취급되고 뒷 항의 영향만 받기 때문에 함수 V는 Pg의 도메인에서 convex 로 불 수 있고 뒷 항도 Pg에 대해서 상수 이기 때문에 V는 Pg의 도메인에서 선형 함수로 볼 수 있어 Generator 입장에서 적은 업데이트로도 충분히 수렴할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-한계&quot;&gt;5. 한계&lt;/h3&gt;
+
+&lt;p&gt;현실적으로 딥러닝 아키텍처는 임계점이 여러개일 수 밖에 없다. 딥러닝에서 파라미터 공간에서는 임계점이 여러개 존재 할 수 밖에 없기 때문에 이론과 다르게 실제 구현 상에서는 딥러닝을 구현할 때의 패널티가 존재한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;6-결론&quot;&gt;6. 결론&lt;/h3&gt;
+
+&lt;p&gt;GAN을 통한 여러개의 데이터셋에 대한 가짜 이미지를 생성하였으나 완전히 동일한 결과물을 도출하지 못했다. 즉, GAN은 현실에 있을 법한 이미지를 생성하는 모델이다.&lt;/p&gt;
+
+&lt;p&gt;GAN은 논문 발표 당시를 기준으로 기존의 다른 여러가지 모델들과 비교하여 충분히 경쟁적인 성능을 보여준다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="AI" />
+      
+
+      
+        <summary type="html">11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기 Generative Adversarial Nets</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">11월 논문 리뷰 2주차 GAN 코드 실습 Python</title>
+      <link href="https://hwangonjang.github.io/ai_11m-2" rel="alternate" type="text/html" title="11월 논문 리뷰 2주차 GAN 코드 실습 Python" />
+      <published>2020-11-15T01:40:00+09:00</published>
+      <updated>2020-11-15T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/ai_11m-2</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-2">&lt;h1 id=&quot;11월-논문-리뷰-2주차-gan-코드-실습-python&quot;&gt;11월 논문 리뷰 2주차 GAN 코드 실습 Python&lt;/h1&gt;
+&lt;h1 id=&quot;generative-adversarial-nets&quot;&gt;Generative Adversarial Nets&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-코드-실습하기with-colab&quot;&gt;1. 코드 실습하기(with Colab)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주석 참조하기&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MNIST 데이터베이스&lt;/strong&gt; (Modified &lt;a href=&quot;https://ko.wikipedia.org/wiki/미국_국립표준기술연구소&quot;&gt;National Institute of Standards and Technology&lt;/a&gt; database)는 손으로 쓴 숫자들로 이루어진 대형 &lt;a href=&quot;https://ko.wikipedia.org/wiki/데이터베이스&quot;&gt;데이터베이스&lt;/a&gt;이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;GAN for MNIST Tutorial의 사본
+
+Automatically generated by Colaboratory.
+
+Original file is located at
+    https://colab.research.google.com/drive/13chH2RWgHPgTJW5H12Oj756Eq_Js49yl
+
+#### &amp;lt;b&amp;gt;GAN 실습&amp;lt;/b&amp;gt;
+
+* 논문 제목: Generative Adversarial Networks &amp;lt;b&amp;gt;(NIPS 2014)&amp;lt;/b&amp;gt;
+* 가장 기본적인 GAN 모델을 학습해보는 실습을 진행합니다.
+* 학습 데이터셋: &amp;lt;b&amp;gt;MNIST&amp;lt;/b&amp;gt; (1 X 28 X 28)
+
+#### &amp;lt;b&amp;gt;필요한 라이브러리 불러오기&amp;lt;/b&amp;gt;
+
+* 실습을 위한 PyTorch 라이브러리를 불러옵니다.
+&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# 머신러닝을 위한 torch 라이브러리&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torch.nn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 생성자와 판별자의 아키텍쳐를 구별하기 위해&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torchvision&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datasets&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# mnist를 불러오기 위해&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torchvision.transforms&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 불러온 데이터 셋을 의도한 방향으로 변형하여 전처리하기 위해&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;torchvision.utils&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;save_image&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# 학습 과정에서 반복적으로 생성된 이미지를 출력하기 위해&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;#### &amp;lt;b&amp;gt;생성자(Generator) 및 판별자(Discriminator) 모델 정의&amp;lt;/b&amp;gt;&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;latent_dim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# latent 벡터를 뽑기 위한 노이즈 분포의 크기&lt;/span&gt;
+                        &lt;span class=&quot;c&quot;&gt;# 정규분포 이용&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 생성자(Generator) 클래스 정의&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 자식 클래스에서 부모 클래스의 내용을 사용하고 싶을 때 suoper 이용(객체지향)&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 하나의 블록(block) 정의 # 블록을 원하는 만큼 사용 가능&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;layers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 하나의 선형함수 거친후에&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;# 배치 정규화(batch normalization) 수행(차원 동일)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BatchNorm1d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LeakyReLU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inplace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# ReLU : 0 이하의 값은 다음 레이어에 전달하지 않습니다. 0이상의 값은 그대로 출력합니다. (한번 0을 전달하면 이후의 뉴런들의 출력값이 모두 0이 된다.) &lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;layers&lt;/span&gt;                                         &lt;span class=&quot;c&quot;&gt;# -&amp;gt; LeakyReLU : ReLU와 거의 비슷한 형태를 갖습니다. 입력 값이 음수일 때 완만한 선형 함수를 그려줍니다. 일반적으로 알파를 0.01로 설정합니다.(ax (x &amp;lt;= 0))    &lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 생성자 모델은 연속적인 여러 개의 블록을 가짐&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;latent_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 결과적으로 1 * 1 * 28의 하나의 mnist 데이터 생성&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Tanh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;                           &lt;span class=&quot;c&quot;&gt;# 탄젠트로 -1 ~ 1 사이의 값을 가지게 한다&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;                       &lt;span class=&quot;c&quot;&gt;# 노이즈 벡터 z가 들어왔을 때 이미지 형태로 변환 후 리턴&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 판별자(Discriminator) 클래스 정의&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Discriminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Discriminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;             &lt;span class=&quot;c&quot;&gt;# 판별자는 이미지를 받아와서 선형함수와 Activate Function 인 LeakyReLU 를 여러번 수행한다&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LeakyReLU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inplace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;512&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LeakyReLU&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inplace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;256&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sigmoid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;                       &lt;span class=&quot;c&quot;&gt;# 결과적으로 Sigmoid 함수로 확률 값을 내보낼 수 있도록 한다 -&amp;gt; Sigmoid : 0~1로 비선형적으로 서서히 변화하는 함수(신경망 활성화 함수)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# 이미지에 대한 판별 결과를 반환&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;forward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flattened&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# 이미지가 들어왔을때 벡터 형태로 나열 후&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flattened&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;# 모델에 넣어 결과 리턴&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;#### &amp;lt;b&amp;gt;학습 데이터셋 불러오기&amp;lt;/b&amp;gt;
+
+* 학습을 위해 MNIST 데이터셋을 불러옵니다.
+&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;transforms_train&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Compose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;28&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ToTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;transforms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Normalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# 텐서 형태로 크기에 맞춰 만든다&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;train_dataset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datasets&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MNIST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./dataset&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transforms_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 학습 데이터를 불러와 위의 형태로 전처리&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dataloader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;utils&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DataLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_workers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c&quot;&gt;# 하나의 batch에 이미지 128개&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;#### &amp;lt;b&amp;gt;모델 학습 및 샘플링&amp;lt;/b&amp;gt;
+
+* 학습을 위해 생성자와 판별자 모델을 초기화합니다.
+* 적절한 하이퍼 파라미터를 설정합니다.
+&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 생성자(generator)와 판별자(discriminator) 초기화&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;generator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;discriminator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Discriminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# .cuda() -&amp;gt; GPU 이용&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;discriminator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 손실 함수(loss function)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;adversarial_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BCELoss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 손실함수 BCELoss : 마지막 레이어의 값이 0~1(시그모이드 함수 사용 필수) &amp;lt;-&amp;gt; CrossEntropy : 마지막 레이어의 노드 수가 2개 이상&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;adversarial_loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 학습률(learning rate) 설정&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0002&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 생성자와 판별자를 위한 최적화 함수&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;optimizer_G&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;betas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# 옵티마이저는 학습 데이터(Train data)셋을 이용하여 모델을 학습 할 때 데이터의 실제 결과와 모델이 예측한 결과를 기반으로 잘 줄일 수 있게 만들어주는 역할을 한다.(Optimize : 최대한 좋게 만들다)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;optimizer_D&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Adam&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discriminator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;betas&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;# https://velog.io/@reversesky/Optimizer%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%A0%95%EB%A6%AC&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# betas 파라미터는 가장 많이 사용되는 하이퍼 파라미터&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;* 모델을 학습하면서 주기적으로 샘플링하여 결과를 확인할 수 있습니다.&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 200번 반복&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n_epochs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 학습의 횟수(epoch) 설정&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sample_interval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 몇 번의 배치(batch)마다 결과를 출력할 것인지 설정&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;start_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_epochs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataloader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# enumerate : 몇 번째 반복인지 튜플로 저장하여 알려줌 (print(i))&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 진짜(real) 이미지와 가짜(fake) 이미지에 대한 정답 레이블 생성&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;real&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fill_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 진짜(real): 1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;fake&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FloatTensor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fill_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 가짜(fake): 0&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;real_imgs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 생성자(generator)를 학습합니다. &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer_G&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zero_grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 랜덤 노이즈(noise) 샘플링&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;torch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;latent_dim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cuda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;        &lt;span class=&quot;c&quot;&gt;# 이미지의 개수 만큼 노이즈를 뽑아서 생성자에 넣는다&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 이미지 생성&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;generated_imgs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 생성자(generator)의 손실(loss) 값 계산&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;g_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adversarial_loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discriminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;generated_imgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                  &lt;span class=&quot;c&quot;&gt;# real 이미지로 만들 수 있도록 학습&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 생성자(generator) 업데이트&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;g_loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;       &lt;span class=&quot;c&quot;&gt;# backward : 기울기 계산&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer_G&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# step : 반복적으로 작업을 실행&lt;/span&gt;
+
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; 판별자(discriminator)를 학습합니다. &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer_D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zero_grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 판별자(discriminator)의 손실(loss) 값 계산&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;real_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adversarial_loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discriminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real_imgs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                    &lt;span class=&quot;c&quot;&gt;# 실제 이미지는 실제로 분류&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;fake_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adversarial_loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;discriminator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;generated_imgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;detach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fake&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;c&quot;&gt;# 생성자의 이미지는 가짜로 분류&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;d_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;real_loss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fake_loss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+
+        &lt;span class=&quot;c&quot;&gt;# 판별자(discriminator) 업데이트, 원래 논문은 판별자 업데이트 후에 생성자 업데이트&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;d_loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backward&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;optimizer_D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;done&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dataloader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;done&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sample_interval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;c&quot;&gt;# 생성된 이미지 중에서 25개만 선택하여 5 X 5 격자 이미지에 출력&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;save_image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;generated_imgs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{done}.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normalize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c&quot;&gt;# 하나의 epoch이 끝날 때마다 로그(log) 출력&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;[Epoch {epoch}/{n_epochs}] [D loss: {d_loss.item():.6f}] [G loss: {g_loss.item():.6f}] [Elapsed time: {time.time() - start_time:.2f}s]&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;* 생성된 이미지 예시를 출력합니다.&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;IPython.display&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'92000.png'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_3-1.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_3-2.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_3-3.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_3-4.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_3-5.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_3-6.png?raw=true&quot; /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="AI" />
+      
+
+      
+        <summary type="html">11월 논문 리뷰 2주차 GAN 코드 실습 Python Generative Adversarial Nets</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기</title>
+      <link href="https://hwangonjang.github.io/ai_11m-1" rel="alternate" type="text/html" title="11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기" />
+      <published>2020-11-08T01:40:00+09:00</published>
+      <updated>2020-11-08T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/ai_11m-1</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-1">&lt;h1 id=&quot;11월-논문-리뷰-1주차-논문리뷰&quot;&gt;11월 논문 리뷰 1주차 논문리뷰&lt;/h1&gt;
+
+&lt;h1 id=&quot;generative-adversarial-nets&quot;&gt;Generative Adversarial Nets&lt;/h1&gt;
+
+&lt;h2 id=&quot;0-abstract&quot;&gt;0. Abstract&lt;/h2&gt;
+
+&lt;p&gt;우리는 대립적인 과정을 통해 생성 모델을 추정하기 위한 새로운 프레임워크를 제안한다. 데이터 분포를 포작하는 생성모델 G와 샘플이 훈련 데이터에서 나왔을 확률을 추정하는 차별 모델 D의 두가지 모델을 동시에 훈련한다. G의 훈련은 D가 실수할 확률을 최대로 높이는 것이다. 임의의 함수 G와 D의 공간에는 G가 훈련 데이터 분포를 복구하고 D가 모든 곳에서 1/2가 되는 특별한 솔루션이 존재한다. G와 D가 다중 퍼셉트론으로 정의되는 경우, 역전파를 통해 시스템 전체를 훈련시킬 수 있다. 실험은 생성된 샘플의 정성적, 정량적 평가를 통해 프레임워크의 잠재력을 입증한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
+
+&lt;p&gt;딥러닝은 자연이미지, 음성과 같은 인공지능 애플리케이션에서 접하는 데이터의 종류에 대한 확률 분포를 나타내는 풍부하고 계층적인 모델을 발견하는 것이다. 지금까지의 딥러닝은 대개 클래스 레이블에 고차원적이고 풍부한 감각 입력에 매핑하는 모델과 관련있다. 이러한 모델들은 주로 역전달 및 중도하차알고리즘에 바탕을 두고 있으며, 선형 단위들 사용한다. 심층 생성 모델은 다음과 같은 많은 난해한 확률적 계산을 근사하는 어려움 때문에 영향을 덜 받았다. 우리는 이러한 어려움을 비켜가는 새로운 생성 모델 추정 절차를 제안한다.&lt;/p&gt;
+
+&lt;p&gt;제안된 적대적 네트 프레임워크에서 생성 모델은 상대에 대하여 배치된다. 즉, 표본이 모델 분포에서 추출되었는지 데이터 분포에서 추출된 것인지 결정하는 방법을 배우는 차별적 모델이다. 생성 모델은 위조 화폐를 만드는 팀과 유사하고, 차별 모델은 위조 화폐를 탐지하려는 경찰과 유사하다고 볼 수 있다. 이는 두 팀 모두 위조품이 진짜와 구별될 수 없을 때까지 그들의 수행 능력을 개선하도록 유도한다.&lt;/p&gt;
+
+&lt;p&gt;이 프레임워크는 많은 종류의 모델 및 최적화 알고리즘에 대한 특정 훈련 알고리즘을 산출할 수 있다. 이 논문에서는 생성 모델이 샘플을 생성하는 특별한 경우를 살펴본다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-이론-설명&quot;&gt;2. 이론 설명&lt;/h2&gt;
+
+&lt;h3 id=&quot;2-1-이산확률분포-vs-연속확률분포&quot;&gt;2-1. 이산확률분포 vs 연속확률분포&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_2-1.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이산확률분포는 x확률 분포가 정해져 있을 때, 연속확률분포는 x 확률 변수가 정해져 있지 않을 때 사용한다. 즉, 실제 세계 데이터는 정규분포로 표현할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_2-2.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;현실과 가장 가까운 데이터인 이미지 데이터는 다차원 특징 공간의 한 점으로 표현되므로 통계적인 평균치가 존재한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-2-생성-모델&quot;&gt;2-2. 생성 모델&lt;/h3&gt;
+
+&lt;p&gt;실존하지 않지만 있을 법한 이미지를 생성할 수 있는 모델 ⇒ 통계적, 새로운 데이터 생성&lt;/p&gt;
+
+&lt;p&gt;목표: 이미지 데이터의 분포를 근사하는 모델  G를 만드는 것.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_2-3.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;시간이 지나면서 원본 데이터를 학습한다. 학습이 잘 되었다면 d처럼 통계적으로 평균적인 특징을 가지는 데이터를 생성할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-3-gangenerative-adversarial-networks&quot;&gt;2-3. GAN(Generative Adversarial Networks)&lt;/h3&gt;
+
+&lt;p&gt;생성자와 판별자 두 개의 네트워크를 활용한 생성 모델.&lt;/p&gt;
+
+&lt;p&gt;목적 함수를 통해 생성자는 이미지 분포를 학습할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_2-4.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;판별자 D는 진짜 이미지를 1. 가짜를 0으로 도출할 수 있도록 하며, 생성자 G는 가짜 이미지가 판별자에 의해 1을 도출할 수 있도록 학습한다. 이 과정을 반복하여 G가 그럴듯한 이미지를 생성할 수 있도록 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_2-5.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-결과&quot;&gt;3. 결과&lt;/h2&gt;
+
+&lt;p&gt;GAN은 실제로 학습과정을 거치면서 실제로 있을 법한 이미지를 생성할 수 있었고 GAN 등장 기준으로 이전의 모델 보다 성능도 좋았다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="AI" />
+      
+
+      
+        <summary type="html">11월 논문 리뷰 1주차 논문리뷰</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">10월 인공지능 논문리뷰</title>
+      <link href="https://hwangonjang.github.io/ai_10m" rel="alternate" type="text/html" title="10월 인공지능 논문리뷰" />
+      <published>2020-10-29T01:40:00+09:00</published>
+      <updated>2020-10-29T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/ai_10m</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/ai_10m">&lt;h1 id=&quot;10월-논문리뷰&quot;&gt;10월 논문리뷰&lt;/h1&gt;
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+&lt;p&gt;GDSC Soongsil (Google Development Student Club), 숭실대학교의 GDSC 에서 제가 참여한 AI 파트는 매월 하나의 논문을 매주 리뷰하기로 했습니다. 10월 첫 논문 리뷰는 MASK BASED UNSUPERVISED CONTENT TRANSFER 라는 논문입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;mask-based-unsupervised-content-transfer&quot;&gt;MASK BASED UNSUPERVISED CONTENT TRANSFER&lt;/h2&gt;
+
+&lt;h3 id=&quot;0-abstract&quot;&gt;0. Abstract&lt;/h3&gt;
+
+&lt;p&gt;이 논문은 마스크 기반 자율 콘텐츠 이동에 대한 논문이다. 이 논문에서는 비교적 더 많은 정보를 가지고 있는 도메인과  그렇지 않은 도메인 두 개를 이용하여 어떤 콘텐츠를 옮기는 문제를 해결한다. 제안하는 방법은 도메인의 공통적인 부분과 분리된 부분을 구분하여 마스크 생성을 통해 요구되는 향상에만 기본 네트워크를 집중한다. 이를 통해 광범위한 정향, 정성적 평가를 통해 입증된 것 처럼 최첨단의 질과 다양한 콘텐츠 이동이 가능하다. 이 방식은 다른 가이드 이미지와 도메인의 별도 콘텐츠를 추가할 수 있을 뿐만 아니라 기존의 별도 콘텐츠를 제거할 수도 있다. 더하여 클래스 라벨들만 제공되는 각 도메인에 대해 약한 지도적인 의미적인 분할을 가능하게 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-introduction논문-소개&quot;&gt;1. Introduction(논문 소개)&lt;/h3&gt;
+
+&lt;p&gt;본 논문에서는 새로운 분리 아이디어를 기반으로 하지만 계산에 사용되는 불필요한 자원과 매개변수의 사용을 최소화한다는 과제를 갖는다. 즉, 마스크를 사용하여 전체 대상에 대해 불필요한 재구성의 낭비를 요청하지 않고 원하는 증강에만 네트워크를 집중한다. 이 방법은 두 가지 주요 단계로 구성된다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;첫번째 단계는 도메인의 특정 내용과 변하지 않는 콘텐츠를 별도로 인코딩 하는 단계이다.&lt;/li&gt;
+  &lt;li&gt;두번째 단계는 본 논문의 핵심 통찰로, 반드시 변해야할 타겟의 부분을 찾아내고 그것에 어울리는 증강 콘텐츠를 생성한다. 이렇게 하면 관련 없는 사항들을 그대로 유지할 수 있어 생성 품질을 크게 향상 시킬 수 있다. 증강은 관련있는 부분에 초점을 맞추며 (자동 인코더 유사 모듈의)병목 현상을 겪지 않고 대상 이미지에서 직접 다른 모든 세부 정보를 가져온다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이러한 논문의 방법은 또한 반대의 경우에도 사용할 수 있는데, 즉, 도메인별 속성을 제거하고 다시 원래대로 변환하는 것이다. 이 기능은 중심 기능이 아님에도 높은 능력을 갖고 있다. 이는 콘텐츠를 제거한 이미지에서 그 위치를 다른 콘텐츠로 대체하는 방법으로 이용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-이론-설명&quot;&gt;2. 이론 설명&lt;/h3&gt;
+
+&lt;p&gt;우리는 도메인 B의 샘플 b를 A의 샘플 a로 전송한다. 또, 도메인별 콘텐츠의 시맨틱 세분화를 약하게 감독하는 작업도 고려한다. 즉, 도메인 A와 B의 샘플이 주어지면 도메인별 부분에 레이블을 지정하거나 분할 마스크를 지정한다.  또한, 속성 제거도 고려한다. 사진의 B에서 도메인의 특정 부분을 제거한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-1.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 이론&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이 논문의 방법은 5개의 다른 네트워크로 구성된다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Ec는 도메인 A와 B 사이의 공통 정보를 캡쳐하는 것을 목표로 한다.&lt;/li&gt;
+  &lt;li&gt;또 다른 인코더인 Es는 도메인 B에서 별도의 정보를 캡쳐하는 것을 목표로 한다.&lt;/li&gt;
+  &lt;li&gt;혼잡 네트워크 도메인 C는 두 도메인에 대해 Ec가 생성한 인코딩을 구별할 수 없도록 만드는데 이용된다.&lt;/li&gt;
+  &lt;li&gt;디코더인 DA는 공통 인코더 Ec에서 얻을 수 있는 표현이 주어지면 도메인 A에서 샘플을 생성한다. 해당 샘플이 B에서 온 경우, 도메인별 콘텐츠가 제거된다.&lt;/li&gt;
+  &lt;li&gt;a와 b의 도메인별 콘텐츠를 결합하는 이미지 생성은 디코더 DB에 의해서 수행되며, DB는 두가지 이미지 크기 출력인 z raw와 m을 반환한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-2.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 m(a,b)는 0과 1 사이의 값을 갖는 소프트 마스크이고 z raw는 이미지이다. 마스크와 생성된 이미지는 모두 배치 및 기타 모양 수정 사항을 결정하는 이미지 a뿐만 아니라 b에 의해서도 달라진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-3.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;최종 출력 z는 이러한 출력 이미지 a의 조합이며 여기서 x는 요소별 곱셈을 나타낸다. 따라서 그림2는 추론 단계와 다섯개의 네트워크를 보여준다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;도메인 혼잡 손실(Sa,Sb?)&lt;/strong&gt;
+ 우리는 Ec에서 생성된 공통 인코딩이 두 도메인 모두에 공통적인 정보만을 포함하도록 보장하려고 한다. 이는 재구성 손실을 도메인 혼잡 손실과 결합함으로써 이루어진다. 이 두 도메인의 인코딩이 통계적으로 일치하도록 장려하는 판별자 네트워크 C를 사용한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-4.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sa 와 Sb가 두 도메인과 l(p, q) = −(q log(p) + (1 − q) log(1 − p))에서의 샘플 학습이 이루어지는 곳은 p ∈ [0, 1] and q ∈ {0, 1}의 이진 교차 엔트로피 손실이다. C는 구별할수 없는 인코딩을 Ec에서 생성하고자 하는 동안 C는 도메인 A와 B의 인코딩을 구별하려고 시도한다. Ec가 두 분포를 구별할 수 없도록 하는동안 C는 다음과 같은 목표를 최소화하기 위해 적대적 방식으로 훈련된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-5.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;재구성 손실&lt;/strong&gt;
+ 도메인 혼동 손실은 공통 인코더인 Ec가 도메인 B에서 별도의 정보를 인코딩하지 않도록 합니다. 샘플 A의 경우 우리는 Ec(a)의 정보가 그것을 재구성하기에 충분한지 검증해야 하고, 도메인 A의 모든 정보가 Ec에 의해 인코딩 되는지 확인해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-6.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 II1은 RGB 이미지 값에 직접 적용되는 L1 손실이다. 비슷하게, Es에 의해 인코딩된 정보가 Es(b)가 도메인 B의 도메인별 정보를 포함하도록 별도의 세부 정보를 재구성하기에 충분한지 확인한다. 이미지 B가 주어지면 DA(Ec(b))를 사용하여 이미지에서 별도의 정보를 제거하고 다시 추가하여 이 작업을 수행한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-7.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우리는 z’을 z 대신에 이용하는데, 이는 Ec가 Da가 아닌 b에 직접적으로 적용되기 때문이다. 두 경우 모두 b의 공통 정보를 복구하지만 z를 사용하면 Da(Ec())를 통해 추가적인 에러를 검출한다. 다음은 z’의 정의이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-8.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마지막으로 우리는 마스크를 최소한으로 향상시킴으로써 두 도메인의 역할을 강화한다. 우리의 실험에서 우리는 마스크 크기를 명시적으로 제한하거나 다른 전통적인 정규화 용어를 사용하여 낮은 결과를 산출했다. 대신, 전송 파이프라인의 두 입력을 통해 각 도메인의 샘플을 실행하고 성공적인 재구성을 지향함으로써 보다 부드러운 방식으로 이 목표를 달성한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-9.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L(A,Recon2)은 z와 a 사이의 최소한의 거리를 권장한다. z raw는 a와 같은 것이 이상적이지만 완벽한 자동 인코딩을 할 수 없는 인코더와 디코더를 사용하기 때문에 z raw와 a 사이에는 약간의 거리가 있다. 따라서 z와 a 사이의 거리를 최소화하기 위해 네트워크는 마스크의 크기를 최소화해야한다. L(B,Recon2)도 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;사이클 일관성 손실&lt;/strong&gt;
+ 잠재 공간에서의 사이클 일관성은 분리를 장려하기 위한 추가적인 제약으로 사용된다. LC를 최소화하기 위해 판별기 C를 별도로 훈련한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-10.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;II2는 MSE 손실이다. MSE(Mean Squared Error)는 손실함수로 오답에 가까울 수록 큰 값이 나온다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;추론&lt;/strong&gt;
+ 일단 한 번 훈련되면, 네트워크는 감독되지 않은 콘텐츠 전송과 약하게 감독된 도메인별 정보의 세분화에 사용될 수 있다. 첫번째 경우, 우리는 a,b 에 대한 예제 z를 생성한다. 두번째로 도메인 B에서 두 입력 m(b,b)에 이미지 b를 공급하여 생성된 마스크를 고려한 다음 임계값을 적용하여 이진 마스크를 얻는다. 이 방법은 정확한 임계값에 거의 영향을 받지 않는다. 네트워크는 Zunmasked := DA(Ec(b))를 생성하여 특성 제거에 사용할 수도 있다. Zunmasked는 별도의 부분이 제거된 B로, 재구성된 얼굴 형상의 누락을 방지하기 위해 생성된 출력은 다음과 같이 계산된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-11.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;M은 소프트 마스크 m의 이분 마스크이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;2-2-experiments평가&quot;&gt;2-2. Experiments(평가)&lt;/h3&gt;
+
+&lt;p&gt;콘텐츠 전송, 도메인 외부 조작, 속성 제거, 순차 콘텐츠 전송, 순차 속성 제거 및 콘텐츠 추가, 도메인별 콘텐츠의 약한 감독 세분화에 대한 방법을 평가한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;콘텐츠 전송&lt;/strong&gt;
+ 셀럽 A 데이터세트에 미소, 수염, 안경 속성을 사용한다. A를 속성이 없는 이미지, B를 속성이 있는 이미지로 한다. 우리는 먼저 B의 별도 부분을 A의 공통 부분에 추가하는 능력을 고려한다. 기준 방법의 그림3과 비교하여 보다시피 안경의 국소 구조만 변경되는 반면, 기준선에서는 많은 세부사항이 손실되고 불필요한 변경이 이루어진다. 그림 1은 소스 이미지 a의 다른 방향을 수용하고 안경을 b에서 올바른 방향으로 조정할 수 있는 우리 방법의 능력을 보여준다.
+ 도메인 번역의 품질을 평가하기 위해 몇 가지 정량적 평가를 실시한다. 표1에서 생성된 이미지의 품질과 다양성을 평가하는데 일반적으로 사용되는 지표인 FID, FID에 대한 대안으로 제안된 KID로 상대적으로 평가한다. 보다시피 우리의 방법은 높은 점수를 받는다.
+ 우리는 b의 별도 부분을 타겟 이미지로 전송하는 우리 방법의 능력도 고려한다. 이를 위해 사전 훈련된 분류기를 사용하여 도메인 A와 B를 구별하고 변환된 이미지의 점수를 고려한다. 이는 표2에 보고되어있으며 분명한 이점을 보여준다. 소스ID가 보존되는지 평가하기 위해 우리는 사전 훈련된 vgg 페이스 네트워크의 코사인 유사성을 계산한다. 높은 값은 보존된 ID를 나타낸다. 표3은 우리 결과가 소스 이미지와 훨씬 더 나은 유사성을 보인다는 것을 나타낸다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;사용자 연구&lt;/strong&gt;
+ 사용자 연구 평가를 더욱 강화하기 위해 사용자 연구를 실시한다. 우리는 a와 b에서 20개의 이미지를 무작위로 샘플링하고 번역된 이미지와 기존의 이미지를 고려한다. 1) 사용자가 B의 분포와 더 가깝게 일치하는 번역된 이미지, 2) 번역된 이미지인 가이드 이미지 b가 주어지면 b의 분리된 부분이 더 잘 전송되고 3) a가 주어지면 세 가지 실험을 수행한다. 평균 점수는 표4에 나와있다. 수염과 안경의 경우 기준 방법보다 지속적으로 높은 점수를 받는다. 미소의 경우 사실적인 연출 능력이 약간 더 높으며, 미소를 원본 이미지에 전달하는 능력은 약간 나쁜 반면, 원본 이미지의 정체성을 보존하는 능력은 훨씬 높다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;도메인 조작 능력&lt;/strong&gt;
+ 도메인 조작 중 학습된 모델이 도메인 이동을 처리할 수 있는 능력, 즉 훈련 중에는 볼 수 없었던 도메인으로부터의 변환을 수행할 수 있는 능력도 고려한다. 예를 들어, 우리는 안경을 쓰지 않은 여성의 얼굴을 도메인 A로 훈련하고, 안경을 쓴 여성의 얼굴을 도메인 B로 훈련한다. 테스트 시간에 A는 남성 얼굴의 도메인 A of로 대체되고, 우리는 우리가 기차나 테스트 샘플을 볼 수 없는 도메인 B from를 생성하면서 남성의 얼굴로 안경을 전달하도록 요청 받는다. 정량적 평가는 표 3에 제공되는데, 이는 우리 방법의 품질에서 무시해도 될 정도의 차이를 보여주며, 기준 방법의 경우 상당한 차이를 보여준다. 시각적 결과는 부록 C에서 찾을 수 있으며, 뿐만 아니라 도메인 이미지에서 극도로 벗어난 것도 우리 방법이 성공적으로 처리한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;핸드백 실험&lt;/strong&gt;
+ 핸드백의 손잡이가 다른 도메인 이미지의 핸드백에 맞추어 명확하게 적용된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;속성 제거&lt;/strong&gt;
+ 우리의 방법은 속성 전공 방법보다 더 일반적이지만, 그림6처럼 속성을 제거하는데 사용할 수 있다. 이 방법은 모든 기본 방법에 비해 생성 품질이 월등히 우수하며 충실도와 변환 사이의 절충점을 제시한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;순차적 콘텐츠 전송&lt;/strong&gt;
+ 우리의 방법을 순차적으로 적용하여 다른 가이드 이미지 및 다른 도메인의 안내된 콘텐츠를 순차적으로 추가할 수 있다. 이 방법은 기준을 훨씬 능가한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;속성 제거와 콘텐츠 추가&lt;/strong&gt;
+ 특정 속성을 제거하는 우리 방법에서 주어진 도메인 A와 B 간에 각각 도메인별 정보를 구분하여 안내된 콘텐츠 전송을 수행할 수 있다. 먼저 도메인 A의 도메인별 특성을 제거한 후 도메인 B에 대한 안내 콘텐츠 추가를 수행한다. 얼굴 특징을 낭비적으로 재구성하지 않으므로 기준을 크게 능가한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;약한 지도 분할&lt;/strong&gt;
+ 여성과 남성의 머리카락을 분할하는 작업에서 남성의 경우 A는 대머리, B는 어두운 머리의 남성으로 구성되어 있고, 여성의 경우 A는 금발, B는 흑발 여성으로 구성되어 있다. 우리는 보르자 등에 주어진 레이블을 사용하여 우리의 방법을 평가한다. 기준은 불필요한 디테일로 파손된 머리카락을 산출한다. 우리의 방법은 네트워크가 B를 재구성하기 위해 올바른 위치에 별도의 콘텐츠를 최소한으로 추가하도록 하였기 때문에 성능이 좋다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;절제분석(표7)&lt;/em&gt;
+ L(B,Recon1), L(A,Recon1)이 없으면 마스크는 비어있기 때문에 수염이 이미지로 전송되지 않는다. LDC가 없으면 생성된 마스크는 탈착이 불가능하기 때문에 비어있다. LCycle이 없으면 생성된 마스크는 얼굴의 더 큰 부분을 포함하는데, 이는 유사성은 유지하지만 분류 점수를 손상시킨다. L(B,Recon2)가 없으면 마스크가 덜 부드러워지고, L(A,Recon2)가 없으면 특정과 다른 물체를 포착한다.
+ L(A,Recon2)와 L(B,Recon2)는 콘텐츠를 인식하는 z에 의존하는 반면 L2는 콘텐츠에 관계없이 모두 동등하게 평가한다(표7).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-12.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-모델-설명&quot;&gt;3. 모델 설명&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_1-13.png?raw=true&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 논문에서 소개하는 모델은 두 도메인 이미지에서 A 도메인에서는 특징(콘텐츠)를 추출하여 B 도메인에 삽입하는 모델이다. 기존의 비슷한 모델과 논문들이 존재하나 이 논문에서는 특별한 전략으로 모델 구현에 접근하여 기존 모델 대비 월등한 성능을 갖고 있다는 것이 특징이다. 이 논문에서 소개하는 모델의 접근 개념은 다음과 같다.
+ 먼저 두 이미지 간에 콘텐츠를 전송할 때 무엇을 어디로 전송해야 하는지, 어떻게 전송해야 하는지 알아야 한다. 이전의 작업은 글로벌 스타일 특성을 이전하거나 ‘어디’ 측면을 무시해 결과적으로 집중이 부족한 비효율적인 세대를 초래한다. 우리의 작업에서는 “무엇”의 측면은 E가 포착하고, DB는 “어디”와 “어떻게”를 모두 포착한다. 우리의 결과는 콘텐츠가 배치된 상황에서 삽입된 콘텐츠의 위치뿐만 아니라 표시되는 형태도 결정한다는 것을 보여준다. 여기서 두 가지 측면은 고정된 콘텐츠 가이드 이미지 b에서도 적용된다. 안내된 콘텐츠 전송 문제에 대한 포괄적인 모델링은 현재 최신 기술보다 훨씬 우수한 결과로 이어진다. 또한 “where”의 모델링을 통해 약한 지도 방식으로 정확한 분할 마스크를 획득하고, 콘텐츠를 제거하고, 이미지 간에 콘텐츠를 교환하며, 점진적인 품질 저하 없이 여러 콘텐츠를 추가할 수 있다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="AI" />
+      
+
+      
+        <summary type="html">10월 논문리뷰 개요 GDSC Soongsil (Google Development Student Club), 숭실대학교의 GDSC 에서 제가 참여한 AI 파트는 매월 하나의 논문을 매주 리뷰하기로 했습니다. 10월 첫 논문 리뷰는 MASK BASED UNSUPERVISED CONTENT TRANSFER 라는 논문입니다.</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">인공지능과 머신러닝, 딥러닝</title>
+      <link href="https://hwangonjang.github.io/ai_basic" rel="alternate" type="text/html" title="인공지능과 머신러닝, 딥러닝" />
+      <published>2020-09-16T01:40:00+09:00</published>
+      <updated>2020-09-16T01:40:00+09:00</updated>
+      <id>https://hwangonjang.github.io/ai_basic</id>
+      <content type="html" xml:base="https://hwangonjang.github.io/ai_basic">&lt;h1 id=&quot;인공지능과-머신러닝-딥러닝&quot;&gt;인공지능과 머신러닝, 딥러닝&lt;/h1&gt;
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+&lt;p&gt;인공지능 분야를 제대로 공부하기 위해 기본적인 개념들을 명확히 하기로 했습니다. GDSC Soonsil에서 AI 파트에 참여했기 때문에 앞으로는 제대로 공부를 시작하려 합니다.&lt;/p&gt;
+
+&lt;p&gt;공부한 사이트: https://blogs.nvidia.co.kr/2016/08/03/difference_ai_learning_machinelearning/&lt;/p&gt;
+
+&lt;h2 id=&quot;1-인공지능&quot;&gt;1. 인공지능&lt;/h2&gt;
+
+&lt;p&gt;인공 지능이라는 개념은 1956년 미국 다트머스 대학에 있던 존 매카시 교수가 개최한 다트머스 회의에서 처음 등장했으며, 최근 몇 년 사이 폭발적으로 성장하고 있는 중입니다. 특히 2015년 이후 신속하고 강력한 병렬 처리 성능을 제공하는 GPU의 도입으로 더욱 가속화되고 있습니다. 갈수록 폭발적으로 늘어나고 있는 저장 용량과 이미지, 텍스트, 매핑 데이터 등 모든 영역의 데이터가 범람하게 된 ‘빅데이터’ 시대의 도래도 이러한 성장세에 큰 영향을 미쳤습니다.
+ 1956년 당시 인공 지능의 선구자들이 꿈꾼 것은 최종적으로 인간의 지능과 유사한 특성을 가진 복잡한 컴퓨터를 제작하는 것이였습니다. 이렇듯 인간의 감각, 사고력을 지닌 채 인간처럼 생각하는 인공 지능을 ‘일반 AI(General AI)’라고 하지만, 현재의 기술 발전 수준에서 만들 수 있는 인공지능은 ‘좁은 AI(Narrow AI)’의 개념에 포함됩니다. 좁은 AI는 소셜 미디어의 이미지 분류 서비스나 얼굴 인식 기능 등과 같이 특정 작업을 인간 이상의 능력으로 해낼 수 있는 것이 특징입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-머신러닝-인공-지능을-구현하는-구체적-접근-방식&quot;&gt;2. 머신러닝: 인공 지능을 구현하는 구체적 접근 방식&lt;/h2&gt;
+
+&lt;p&gt;머신 러닝은 기본적으로 알고리즘을 이용해 데이터를 분석하고, 분석을 통해 학습하며, 학습한 내용을 기반으로 판단이나 예측을 합니다. 따라서 궁극적으로는 의사 결정 기준에 대한 구체적인 지침을 소프트웨어에 직접 코딩해 넣는 것이 아닌, 대량의 데이터와 알고리즘을 통해 컴퓨터 그 자체를 ‘학습’시켜 작업 수행 방법을 익히는 것을 목표로 합니다.&lt;/p&gt;
+
+&lt;p&gt;머신 러닝은 초기 인공 지능 연구자들이 직접 제창한 개념에서 나온 것이며, 알고리즘 방식에는 의사 결정 트리 학습, 귀납 논리 프로그래밍, 클러스터링, 강화 학습, 베이지안(Bayesian) 네트워크 등이 포함됩니다. 그러나 이 중 어느 것도 최종 목표라 할 수 있는 일반 AI를 달성하진 못했으며, 초기의 머신 러닝 접근 방식으로는 좁은 AI조차 완성하기 어려운 경우도 많았던 것이 사실입니다.&lt;/p&gt;
+
+&lt;p&gt;현재 머신 러닝은 컴퓨터 비전 등의 분야에서 큰 성과를 이뤄내고 있으나, 구체적인 지침이 아니더라도 인공 지능을 구현하는 과정 전반에 일정량의 코딩 작업이 수반된다는 한계점에 봉착하기도 했는데요. 가령 머신 러닝 시스템을 기반으로 정지 표지판의 이미지를 인식할 경우, 개발자는 물체의 시작과 끝 부분을 프로그램으로 식별하는 경계 감지 필터, 물체의 면을 확인하는 형상 감지, ‘S-T-O-P’와 같은 문자를 인식하는 분류기 등을 직접 코딩으로 제작해야 합니다. 이처럼 머신 러닝은 ‘코딩’된 분류기로부터 이미지를 인식하고, 알고리즘을 통해 정지 표지판을 ‘학습’하는 방식으로 작동됩니다.&lt;/p&gt;
+
+&lt;p&gt;머신 러닝의 이미지 인식률은 상용화하기에 충분한 성능을 구현하지만, 안개가 끼거나 나무에 가려서 표지판이 잘 보이지 않는 특정 상황에서는 이미지 인식률이 떨어지기도 합니다. 최근까지 컴퓨터 비전과 이미지 인식이 인간의 수준으로 올라오지 못한 이유는 이 같은 인식률 문제와 잦은 오류 때문입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-딥-러닝-완전한-머신-러닝을-실현하는-기술&quot;&gt;3. 딥 러닝: 완전한 머신 러닝을 실현하는 기술&lt;/h2&gt;
+
+&lt;p&gt;초기 머신 러닝 연구자들이 만들어 낸 또 다른 알고리즘인 인공 신경망(artificial neural network)에 영감을 준 것은 인간의 뇌가 지닌 생물학적 특성, 특히 뉴런의 연결 구조였습니다. 그러나 물리적으로 근접한 어떤 뉴런이든 상호 연결이 가능한 뇌와는 달리, 인공 신경망은 레이어 연결 및 데이터 전파 방향이 일정합니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 이미지를 수많은 타일로 잘라 신경망의 첫 번째 레이어에 입력하면, 그 뉴런들은 데이터를 다음 레이어로 전달하는 과정을 마지막 레이어에서 최종 출력이 생성될 때까지 반복합니다. 그리고 각 뉴런에는 수행하는 작업을 기준으로 입력의 정확도를 나타내는 가중치가 할당되며, 그 후 가중치를 모두 합산해 최종 출력이 결정됩니다.&lt;/p&gt;
+
+&lt;p&gt;정지 표지판의 경우, 팔각형 모양, 붉은 색상, 표시 문자, 크기, 움직임 여부 등 그 이미지의 특성이 잘게 잘려 뉴런에서 ‘검사’되며, 신경망의 임무는 이것이 정지 표지판인지 여부를 식별하는 것입니다. 여기서는 충분한 데이터를 바탕으로 가중치에 따라 결과를 예측하는 ‘확률 벡터(probability vector)’가 활용됩니다.&lt;/p&gt;
+
+&lt;p&gt;딥 러닝은 인공신경망에서 발전한 형태의 인공 지능으로, 뇌의 뉴런과 유사한 정보 입출력 계층을 활용해 데이터를 학습합니다. 그러나 기본적인 신경망조차 굉장한 양의 연산을 필요로 하는 탓에 딥 러닝의 상용화는 초기부터 난관에 부딪혔습니다. 그럼에도 토론토대의 제프리 힌튼(Geoffrey Hinton) 교수 연구팀과 같은 일부 기관에서는 연구를 지속했고, 슈퍼컴퓨터를 기반으로 딥 러닝 개념을 증명하는 알고리즘을 병렬화하는데 성공했습니다. 그리고 병렬 연산에 최적화된 GPU의 등장은 신경망의 연산 속도를 획기적으로 가속하며 진정한 딥 러닝 기반 인공 지능의 등장을 불러왔죠.&lt;/p&gt;
+
+&lt;p&gt;신경망 네트워크는 ‘학습’ 과정에서 수많은 오답을 낼 가능성이 큽니다. 정지 표지판의 예로 돌아가서, 기상 상태, 밤낮의 변화에 관계 없이 항상 정답을 낼 수 있을 정도로 정밀하게 뉴런 입력의 가중치를 조정하려면 수백, 수천, 어쩌면 수백만 개의 이미지를 학습해야 할지도 모릅니다. 이 정도 수준의 정확도에 이르러서야 신경망이 정지 표지판을 제대로 학습했다고 볼 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;2012년, 구글과 스탠퍼드대 앤드류 응(Andrew NG) 교수는 1만6,000개의 컴퓨터로 약 10억 개 이상의 신경망으로 이루어진 ‘심층신경망(Deep Neural Network)’을 구현했습니다. 이를 통해 유튜브에서 이미지 1,000만 개를 뽑아 분석한 뒤, 컴퓨터가 사람과 고양이 사진을 분류하도록 하는데 성공했습니다. 컴퓨터가 영상에 나온 고양이의 형태와 생김새를 인식하고 판단하는 과정을 스스로 학습하게 한 것입니다.&lt;/p&gt;
+
+&lt;p&gt;딥 러닝으로 훈련된 시스템의 이미지 인식 능력은 이미 인간을 앞서고 있습니다. 이 밖에도 딥 러닝의 영역에는 혈액의 암세포, MRI 스캔에서의 종양 식별 능력 등이 포함됩니다. 구글의 알파고는 바둑의 기초를 배우고, 자신과 같은 AI를 상대로 반복적으로 대국을 벌이는 과정에서 그 신경망을 더욱 강화해 나갔습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-결론&quot;&gt;4. 결론&lt;/h2&gt;
+
+&lt;p&gt;즉, 딥 러닝은 머신러닝에 해당하는 개념으로 머신러닝이 상위 개념이라고 할 수 있습니다. 
+ 머신 러닝은 결국 손전등, 자동차 또는 컴퓨터 화면이 작동하는 것과 같은 방식으로 기계적 기능을 수행하는 여러 복잡한 수학/코딩입니다. ‘머신 러닝’이 가능하다는 말은 주어진 데이터로 기능을 수행하고, 시간이 지남에 따라 그 기능이 점차 향상됨을 의미합니다.
+ 이와는 달리 딥 러닝은 인공 신경망을 활용한 알고리즘 구조를 적용합니다. 따라서 필요한 데이터의 양도 방대합니다. 이는 고사양의 하드웨어를 요구한다는 것이기도 합니다.&lt;/p&gt;
+
+&lt;p&gt;머신러닝은 컴퓨터에 가까운 인공지능, 딥 러닝은 사람에 가까운 인공지능이라고 생각할 수도 있을 것 같습니다.&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>HwanGonJang</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="AI" />
+      
+
+      
+        <summary type="html">인공지능과 머신러닝, 딥러닝 개요 인공지능 분야를 제대로 공부하기 위해 기본적인 개념들을 명확히 하기로 했습니다. GDSC Soonsil에서 AI 파트에 참여했기 때문에 앞으로는 제대로 공부를 시작하려 합니다.</summary>
+      
+
+      
+      
+    </entry>
+  
+</feed>

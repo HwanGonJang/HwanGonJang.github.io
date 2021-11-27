@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- custom.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    
+    <!--Web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+    <!-- syntax.css -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="장환곤의 포트폴리오 사이트" />
+    <link rel="shortcut icon" href="https://HwanGonJang.github.io/assets/built/images/main.png" type="image/png" />
+    <link rel="canonical" href="https://HwanGonJang.github.io/r_1" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="Gon's Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구" />
+    <meta property="og:description" content="R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구 1. 개요 확률과 통계 과목을 통해 배운 지식과 도구들로 R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구를 진행합니다. 탐구 주제는 구글트렌드로 알아보는 대한민국의 코로나 바이러스 실태와 실제 국민들은 코로나 바이러스를 어떻게 인식하고 있는지, 정말 전세계적 판데믹 상황으로 받아들이는지 약 1년 반 동안의" />
+    <meta property="og:url" content="https://HwanGonJang.github.io/r_1" />
+    <meta property="og:image" content="https://HwanGonJang.github.io/assets/built/images/paper.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2020-08-14T01:40:00+09:00" />
+    <meta property="article:modified_time" content="2020-08-14T01:40:00+09:00" />
+    <meta property="article:tag" content="R" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구" />
+    <meta name="twitter:description" content="R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구 1. 개요 확률과 통계 과목을 통해 배운 지식과 도구들로 R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구를 진행합니다. 탐구 주제는 구글트렌드로 알아보는 대한민국의 코로나 바이러스 실태와 실제 국민들은 코로나 바이러스를 어떻게 인식하고 있는지, 정말 전세계적 판데믹 상황으로 받아들이는지 약 1년 반 동안의" />
+    <meta name="twitter:url" content="https://HwanGonJang.github.io/" />
+    <meta name="twitter:image" content="https://HwanGonJang.github.io/assets/built/images/paper.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Gon's Portfolio" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="R" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Gon's Portfolio",
+        "logo": "https://HwanGonJang.github.io/"
+    },
+    "url": "https://HwanGonJang.github.io/r_1",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://HwanGonJang.github.io/assets/built/images/paper.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://HwanGonJang.github.io/r_1"
+    },
+    "description": "R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구 1. 개요 확률과 통계 과목을 통해 배운 지식과 도구들로 R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구를 진행합니다. 탐구 주제는 구글트렌드로 알아보는 대한민국의 코로나 바이러스 실태와 실제 국민들은 코로나 바이러스를 어떻게 인식하고 있는지, 정말 전세계적 판데믹 상황으로 받아들이는지 약 1년 반 동안의"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://HwanGonJang.github.io/">Gon's Portfolio</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-python" role="menuitem"><a href="/tag/python/">Python</a></li>
+    <li class="nav-web" role="menuitem"><a href="/tag/web/">Web</a></li>
+    <li class="nav-c" role="menuitem"><a href="/tag/c/">C</a></li>
+    <li class="nav-etc" role="menuitem"><a href="/tag/etc/">etc</a></li>
+    <li class="nav-google" role="menuitem"><a href="/tag/google/">Google</a></li>
+    <li class="nav-google" role="menuitem"><a href="/tag/R/">R&통계</a></li>
+    <li class="nav-google" role="menuitem"><a href="/tag/AI/">AI</a></li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">All Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag별 Posts</a>
+    </li>
+</ul>
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-r post tag-R ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="14 August 2020">14 August 2020</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/r/'>R</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구</h1>
+            </header>
+
+            <!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/paper.png)">
+            </figure>
+            
+            -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <h1 id="r과-구글-트렌드를-활용한-코로나-관련-검색어-탐구">R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구</h1>
+
+<h2 id="1-개요">1. 개요</h2>
+
+<p>확률과 통계 과목을 통해 배운 지식과 도구들로 R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구를 진행합니다. 탐구 주제는 구글트렌드로 알아보는 대한민국의 코로나 바이러스 실태와 실제 국민들은 코로나 바이러스를 어떻게 인식하고 있는지, 정말 전세계적 판데믹 상황으로 받아들이는지 약 1년 반 동안의 휴식으로 인식하는지 또는 어떤 생각을 하고 있는지 연령대 별로 통계를 내서 알아보도록 하겠습니다. 이외에도 네이버 데이터랩의 검색 데이터를 활용하여 검증을 거치도록 하겠습니다. 이때 확률과 통계 과목에서 배운 지식과 통계 기술을 사용하고, 도구로는 R, 엑셀 등을 활용하도록 하겠습니다.</p>
+
+<p>이때, 구글 트렌드와 네이버 데이터 랩은 포털 사이트 구글, 네이버에서 이용자들이 검색한 검색어들을 공개해주는 서비스입니다. ‘모두 거짓말을 한다’라는 책에서는 포털 사이트의 검색창은 모든 사람이 자신의 걱정 혹은 생각들을 숨김없이 드러내는 곳이라고 합니다. 가족 심지어 자신에게 까지 드러내지 못한 감정이나 생각들을 포털 사이트에는 검색하여 정보를 얻는 일이 많기 때문입니다. 이러한 심리를 가설로 설정하고 실제로 국민들이 코로나 바이러스를 어떻게 인식하고 있는지 연구하도록 하겠습니다.</p>
+
+<h2 id="2-구글트렌드를-통해-검색량-데이터-가져오기">2. 구글트렌드를 통해 검색량 데이터 가져오기</h2>
+
+<h3 id="2-1-통계-데이터-가져오기">2-1 통계 데이터 가져오기</h3>
+
+<p>구글 트렌드는 구글에서 제공하는 특정 검색량에 대한 추이 및 통계입니다. 사용자는 원하는 검색어를 구글트렌드에 입력하면 그 검색어에 대한 원하는 기간에서의 검색량을 csv 파일로 제공해줍니다.</p>
+
+<p>(사진 1.구글 트렌드 ‘코로나’ 검색어 입력 사진)</p>
+
+<p>이번 Term-Paper에서는 이렇게 얻은 검색어에 대한 csv파일을 이용하기 쉽게 엑셀 파일(xlsx)로 변환하여 R Studio 에서 통계 분석을 시행합니다. 통계에 대한 분석 결과를 통해 코로나 바이러스가 우리에게 미친 영향, 코로나 바이러스에 대한 인식의 변화 등을 탐구 하도록 하겠습니다.</p>
+
+<p>(사진2. 구글 트렌드 ‘코로나’ 검색어 엑셀 파일)</p>
+
+<p>2-2 R studio 엑셀 가져와서 출력하기
+위의 엑셀 파일을 이용하여 R Studio 에서 분석을 진행합니다. 엑셀 데이터를 R에서 다시 그리고 이 데이터를 활용하여 시각화를 합니다.</p>
+
+<p>먼저 엑셀 파일을 R Studio 프로젝트 폴더에 업로드 합니다.
+Home\statisticAssignment 경로로 프로젝트 폴더를 만들고 엑셀 파일을 옮겨줍니다.</p>
+
+<blockquote>
+  <p>install.packages(“readxl”)  <br />
+//엑셀 파일을 다루기 위해 readxl 라이브러리 다운로드
+library(readxl)  <br />
+//readxl 라이브러리 로드
+df1_exam_corona &lt;- read_excel(“coronaExcel.xlsx”)  <br />
+//엑셀 파일을 읽을 변수 생성
+df1_exam_corona
+//엑셀 파일의 데이터 가져오기</p>
+</blockquote>
+
+<p>위와 같은 과정으로 엑셀 파일의 데이터를 가져와 R Studio 에 그릴 수 있습니다.</p>
+
+<p>(사진3. R Studio에 엑셀 데이터 그리기)</p>
+
+<p>2-3 R studio 엑셀 데이터 시각화하기
+df1_exam_corona 변수로 ‘코로나’ 검색어에 대한 통계 파일을 받아왔습니다. 이제 이 파일을 시각화하기 위해 ggplot2 라는 패키지를 다운로드 받습니다. ggplot2 는 R의 대표적인 그래프 그리기 툴입니다.</p>
+
+<blockquote>
+  <p>install.packages(“ggplot2”)  <br />
+//테이블의 시각화를 위해 ggplot2 라이브러리 다운로드
+library(ggplot2)  <br />
+//ggplot2 라이브러리 로드
+df1_exam_corona &lt;- read_excel(“coronaExcel.xlsx”)  <br />
+//엑셀 파일을 읽을 변수 생성
+ggplot(data=df1_exam_corona, aes(x=Day, y=Corona, group=1)) + geom_line()
+//엑셀 파일의 데이터를 통해 선그래프 그리기</p>
+</blockquote>
+
+<p>검색어 통계를 보기에 가장 직관적인 선 그래프를 그리기 위해 geom_line()을 통해 선 그래프를 그려주었습니다. 이것으로 ‘코로나’ 검색어에 대한 통계를 가져와 그래프를 그리는 것까지의 과정을 완료했습니다. 지금부터는 ‘코로나’ 이외의 검색어를 구글트렌드로 같은 방법으로 가져와 분석하도록 하겠습니다.
+ 
+3-1.‘코로나’검색량 통계
+3-1-1 통계 및 정리</p>
+
+<p>(사진4. R Studio ‘코로나’ 검색어 통계 선 그래프)
+ 2 의 과정을 거쳐 R Studio로 검색량 추이 통계 선 그래프를 그리는데 성공했습니다. 위의 그래프는 2019.12.01 ~ 2021.06.06 까지의 코로나 검색어의 검색량 통계입니다. 위 그래프를 통해 코로나 바이러스가 창궐한 2020년 초 코로나 바이러스에 대한 관심이 급증하여 사람들이 코로나 바이러스에 대해 위험 인식을 가지고 경계 하였음을 알 수 있습니다. 그러나 약 1년 후 마스크와 비대면 생활에 익숙해진 사람들은 코로나 바이러스에 대한 관심(검색)이 상대적으로 줄었다는 것을 알 수 있습니다. 
+한가지 재미있는 것은 시기입니다. 대한민국은 지금까지 3번의 대유행이 있었다. 2020년 3월 신천지에의한 1차 대유행, 2020년 8월 성북구 교회에 의한 2차 대유행, 또, 같은 해 11월 방역 한계와 무증상 감염자에 의한 3차 대유행입니다. 위의 코로나 검색어 그래프는 대한민국의 코로나 바이러스 1, 2, 3차 대유행 기간에 따라 검색어 그래프가 상승 곡선을 그린다는 것도 알 수 있습니다. 따라서 이러한 결과를 통해 코로나 바이러스에 대한 경계의 정도와 관심을 알 수 있습니다.</p>
+
+<p>3-2. 휴일, 휴식 관련 검색량 통계
+ 3-2-1 ‘숙박’ 검색어 통계 및 정리</p>
+
+<p>코로나 검색어 통계와 같은 과정을 거쳐 ‘숙박’이라는 검색어에 대한 구글트렌드 통계를 분석했습니다. 휴일에 나가고 싶어하는 사람들의 심리는 당연한 것이지만 코로나 바이러스 판데믹 상황에서는 자제해야 한다는 걸 모두 알고 있습니다. 따라서 휴일 관련 통계는 사람들의 바이러스 인식과 심리를 잘 나타내 줄 것이라는 가설을 세웠고 이는 꽤 들어 맞았습니다.
+ ‘숙박’이라는 검색어에 대한 통계 그래프는 몇가지 흥미로운 점을 시사합니다. 첫번째로 2019년과 2020년의 경계입니다. 바이러스 창궐 전 2019년 말까지 숙박 검색량을 볼 때 많은 사람들이 여행 계획을 가지고 있었음을 알 수 있습니다. 특히 겨울방학 시점에 최고점을 찍은 것을 알 수 있습니다. 그러나 바이러스 창궐 이후 숙박, 즉 여행에 대한 관심이 크게 떨어졌습니다. 바이러스에 대한 경계심 때문입니다. 이를 통해 사람들이 바이러스에 대해 조심하고 있음을 알 수 있습니다. 
+두번째로 흥미로운 점은 그래프의 상승 곡선 시기입니다. 3-1에서 다룬 바와 같이 대한민국은 3번의 대유행이 있었습니다. 3월, 8월, 11월 입니다. 놀라운 점은 그래프가 3월, 8월 11월 시기에 상승곡선을 형성한다는 것입니다. 사람들은 대유행 직전 바이러스에 대한 경계가 헤이해졌고 많은 사람들이 참아왔던 여행을 감행한 것으로 이해할 수 있습니다. 물론 교회 발 확산이라는 사실이 가장 큰 이유이겠지만 사람들의 여행에 대한 관심의 급증도 또 하나의 이유가 될 수 있음을 시사하는 그래프입니다.</p>
+
+<p>3-3. 줌’ 등 온라인 기능 이용 통계
+ 3-3-1‘줌’검색어 통계 및 정리</p>
+
+<p>코로나 바이러스가 창궐한 이후 가장 큰 영향을 받은 분야는 분명 교육입니다. 바이러스 확산을 막기 위해 초중고대학교들은 모두 비대면 수업을 강행했고 수업을 위해 줌이나 구글 클래스룸 기능을 이용했습니다. 따라서 학교를 다니는 1020세대의 학생들은 이 둘을 자주 이용할 것입니다. 또한 학생 이외에도 직장인과 같은 사회인 들도 비대면 미팅 프로그램을 자주 이용할 것입니다.
+위 그래프는 대표적인 온라인 미팅 프로그램 줌에 대한 구글의 검색량 통계를 그래프로 그린 것입니다. 2019년 까지 거의 이용 및 검색이 없었던 프로그램인 줌은 2020년 코로나 바이러스 창궐 이후 폭발적으로 이용량이 증가했음을 알 수 있습니다.</p>
+
+<p>3-4.‘백신’검색량 통계 
+ 3-4-1‘백신’검색량 통계 및 정리</p>
+
+<p>2021년으로 판데믹 상황이 1년 이상 지속된 후 화이자, 아스트로제네카 등 기업에서 백신을 개발했습니다. 개발한 백신으로 현재 미국, 유럽 등은 꽤 높은 접종률을 기록했고 많은 사람들이 마스크 없는 일상을 되찾았습니다. 이는 곧 대한민국의 일상도 되찾아 줄 수 있을 것입니다. 따라서 순차적으로 모두가 백신을 맞는 것이 중요합니다. 
+위 백신에 대한 검색어 통계 그래프를 통해 사람들의 백신 관심도가 크게 올랐음을 알 수 있습니다. 또한 백신 검색어는 곧 백신 접종 예약을 위한 검색으로 이어지기도 하기 때문에 좋은 현상이라고 볼 수 있을 것 같습니다.</p>
+
+<ol>
+  <li>결론
+이렇게 많은 사람들의 일상과 행복을 빼앗은 코로나 바이러스 판데믹 상황에 대해 R을 활용하여 검색어의 검색량을 기준으로 분석을 해보았습니다. 확률과 통계 과목에서 배운 R Programming을 활용하여 간단하지만 의미있는 통계 분석을 했습니다. 
+  검색량을 분석하는 것은 굉장히 의미있었습니다. 검색이라는 수단은 사람들로 하여금 자신의 의도와 속을 잘 드러낼 수 있는 방법이었습니다. 따라서 코로나 바이러스라는 민감한 주제에도 검색 만큼은 자신이 판데믹 상황에도 불구하고 하고 싶은 것 혹은 할 것 들을 가감없이 드러냈습니다. 그러한 결과인 검색량은 굉장히 신빙성 있는 통계였습니다. 이를 그래프로 그려 판단해보았을 때에도 실제 한국의 상황과 잘 들어맞음을 알 수 있었습니다.</li>
+</ol>
+
+<p>검색어를 분석하는 것 외에도 R Programming은 데이터의 질과 분석가의 역량에 따라 무궁한 잠재력을 갖고 있습니다. 이번 텀페이퍼를 통해 가치있는 분석을 도출하기 위해 확률과 통계 과목의 기초는 굉장히 중요함을 알 수 있었습니다.</p>
+
+                </div>
+            </section>
+
+            
+            <!-- Email subscribe form at the bottom of the page -->
+            <!--
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to Gon's Portfolio</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+            -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/me.png" alt="HwanGonJang" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/HwanGonJang">HwanGonJang</a></h4>
+                                
+                                    <p>Soongsil Univ. 메이커스페이스 소프트웨어 매니저</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/HwanGonJang">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'https://HwanGonJang.github.io/r_1';
+                            this.page.identifier = '/r_1';
+                            this.page.title = 'R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://xxxxxxxx.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/main.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; Gon's Portfolio &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/r/">R</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/st_1m">An Empirical Study of Software Reuse with Special Attention to Ada 논문 리뷰</a></li>
+                                        
+                                    
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/r/">
+                                
+                                    See all 1 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/ai_basic">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/paper.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/ai_basic">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Ai</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">인공지능과 머신러닝, 딥러닝</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/me.png" alt="HwanGonJang" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/HwanGonJang/">HwanGonJang</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/st_1m">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/paper.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/st_1m">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">R</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">An Empirical Study of Software Reuse with Special Attention to Ada 논문 리뷰</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/me.png" alt="HwanGonJang" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/HwanGonJang/">HwanGonJang</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://HwanGonJang.github.io/">
+            
+            <span>Gon's Portfolio</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">R과 구글 트렌드를 활용한 코로나 관련 검색어 탐구</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=R%EA%B3%BC+%EA%B5%AC%EA%B8%80+%ED%8A%B8%EB%A0%8C%EB%93%9C%EB%A5%BC+%ED%99%9C%EC%9A%A9%ED%95%9C+%EC%BD%94%EB%A1%9C%EB%82%98+%EA%B4%80%EB%A0%A8+%EA%B2%80%EC%83%89%EC%96%B4+%ED%83%90%EA%B5%AC&amp;url=https://HwanGonJang.github.io/r_1"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://HwanGonJang.github.io/r_1"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://HwanGonJang.github.io/">Gon's Portfolio</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Subscribe to Gon's Portfolio</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+                <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>

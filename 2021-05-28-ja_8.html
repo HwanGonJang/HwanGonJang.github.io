@@ -1,0 +1,146 @@
+<h1 id="java-객체지향-프로그래밍-복습-8-generic-class">[JAVA] 객체지향 프로그래밍 복습 (8) Generic Class</h1>
+
+<h2 id="자바">자바</h2>
+
+<p>자바(Java)는 C언어에 객체 지향적 기능을 추가하여 만든 C++과는 달리, 처음부터 객체 지향 언어로 개발된 프로그래밍 언어입니다. 자바는 자바 가상 머신(JVM, Java Virtual Machine)을 사용하여, 운영체제와는 독립적으로 동작할 수 있습니다. 따라서 자바는 어느 운영체제에서나 같은 형태로 실행될 수 있습니다. 바로 이러한 점이 수많은 개발자로 하여금 자바를 사용하게 하는 원동력이 되고 있습니다. 현재 자바는 전 세계에서 가장 많이 사용하는 프로그래밍 언어 중 하나입니다.</p>
+
+<h2 id="generic-class">Generic Class</h2>
+
+<p>제네릭은 클래스, 메소드에서 사용할 데이터 타입을 나중에 확정하는 기법입니다. 나중에라는 말은 클래스나 메소드를 선언할 때가 아닌 사용할 때, 즉 인스턴스를 생성할 때나 메소드를 호출할 때 정한다는 의미입니다. 제네릭의 사용 방법과 특징은 메소드의 매개변수와 굉장히 유사한데, 메소드의 매개변수가 ‘값’과 관련되어 있다면 제네릭은 데이터의 ‘타입’과 관련이 있습니다. 자바의 제네릭은 C++의 template과 유사한 기능입니다.</p>
+
+<h2 id="box-클래스">Box 클래스</h2>
+
+<p>제네릭을 복습하기 위해 물건을 넣는 박스 클래스를 구현합니다. 데이터 타입을 모르는 아이템 추가, 아이템 리턴, 아이템 리스트 리턴, 아이템 출력. 아이템 사이즈 출력이 있습니다. 또, 넣을 물건을 정하기 위해 Toy 와 Fruit 클래스를 구현합니다.</p>
+
+<h3 id="boxjava">Box.java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">itemList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;();</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="o">(</span><span class="n">T</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">itemList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="n">T</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">itemList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">size</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="n">itemList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The Value of "</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">" is invalid."</span><span class="o">);</span>
+			<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getItemList</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">itemList</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">itemList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">itemList</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="toyjava">Toy.java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//객체지향프로그래밍및실습 과제</span>
+<span class="c1">//20201881 장환곤</span>
+<span class="c1">//OOP.LAB.09</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Toy</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="nf">Toy</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"New item is added!: Toy-"</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="s">"Toy-"</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="fruit-java">Fruit. java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//객체지향프로그래밍및실습 과제</span>
+<span class="c1">//20201881 장환곤</span>
+<span class="c1">//OOP.LAB.09</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Fruit</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="nf">Fruit</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"New item is added!: Fruit-"</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="s">"Fruit-"</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="testjava">test.java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"== Creating 3 Toys =="</span><span class="o">);</span>
+		<span class="n">Box</span><span class="o">&lt;</span><span class="n">Toy</span><span class="o">&gt;</span> <span class="n">toyBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Toy Box is created."</span><span class="o">);</span>
+		<span class="n">Box</span><span class="o">&lt;</span><span class="n">Fruit</span><span class="o">&gt;</span> <span class="n">fruitBox</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Box</span><span class="o">&lt;&gt;();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Fruit Box is created."</span><span class="o">);</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Creating 3 Toys =="</span><span class="o">);</span>
+		<span class="n">Toy</span> <span class="n">toy1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Toy</span><span class="o">(</span><span class="s">"Ball"</span><span class="o">);</span>
+		<span class="n">Toy</span> <span class="n">toy2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Toy</span><span class="o">(</span><span class="s">"Doll"</span><span class="o">);</span>
+		<span class="n">Toy</span> <span class="n">toy3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Toy</span><span class="o">(</span><span class="s">"Puzzle"</span><span class="o">);</span>
+		
+		<span class="n">toyBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">toy1</span><span class="o">);</span>
+		<span class="n">toyBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">toy2</span><span class="o">);</span>
+		<span class="n">toyBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">toy3</span><span class="o">);</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Printing the whole content of Toy Box =="</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">toyBox</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Printing the number of toys in Toy Box =="</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The number of toys in Toy Box: "</span> <span class="o">+</span> <span class="n">toyBox</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Printing 2nd toy of Toy Box =="</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2nd Toy of Toy Box: "</span> <span class="o">+</span> <span class="n">toyBox</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+		
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Creating 4 Fruits =="</span><span class="o">);</span>
+		<span class="n">Fruit</span> <span class="n">fruit1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="o">(</span><span class="s">"Apple"</span><span class="o">);</span>
+		<span class="n">Fruit</span> <span class="n">fruit2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="o">(</span><span class="s">"Banana"</span><span class="o">);</span>
+		<span class="n">Fruit</span> <span class="n">fruit3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="o">(</span><span class="s">"Cherry"</span><span class="o">);</span>
+		<span class="n">Fruit</span> <span class="n">fruit4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fruit</span><span class="o">(</span><span class="s">"DewBerry"</span><span class="o">);</span>
+		
+		<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">fruit1</span><span class="o">);</span>
+		<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">fruit2</span><span class="o">);</span>
+		<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">fruit3</span><span class="o">);</span>
+		<span class="n">fruitBox</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">fruit4</span><span class="o">);</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Printing the whole content of Fruit Box =="</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">fruitBox</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Printing the number of fruits in Fruit Box =="</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The number of fruits in Fruit Box: "</span> <span class="o">+</span> <span class="n">fruitBox</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"\n== Printing 3rd fruit of Fruit Box =="</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3rd Fruit of Fruit Box: "</span> <span class="o">+</span> <span class="n">fruitBox</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">3</span><span class="o">));</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="결과">결과</h2>
+
+<p><img src="https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ja_8.png?raw=true" /></p>
