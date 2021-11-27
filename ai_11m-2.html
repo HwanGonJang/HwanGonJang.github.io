@@ -142,8 +142,8 @@ into the {body} of the default.hbs template -->
     <li class="nav-c" role="menuitem"><a href="/tag/c/">C</a></li>
     <li class="nav-etc" role="menuitem"><a href="/tag/etc/">etc</a></li>
     <li class="nav-google" role="menuitem"><a href="/tag/google/">Google</a></li>
-    <li class="nav-R" role="menuitem"><a href="/tag/R/">R&통계</a></li>
-    <li class="nav-AI" role="menuitem"><a href="/tag/AI/">AI</a></li>
+    <li class="nav-r" role="menuitem"><a href="/tag/r/">R&통계</a></li>
+    <li class="nav-ai" role="menuitem"><a href="/tag/ai/">AI</a></li>
     <li class="nav-JAVA" role="menuitem"><a href="/tag/java/">JAVA</a></li>
     <li class="nav-archive" role="menuitem">
         <a href="/archive.html">All Posts</a>
@@ -174,7 +174,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-ai post tag-AI ">
+        <article class="post-full  tag-ai post tag-ai ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
@@ -302,9 +302,10 @@ Original file is located at
     <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">([</span><span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">])</span>
 <span class="p">])</span>        <span class="c"># 텐서 형태로 크기에 맞춰 만든다</span>
 
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s">"./dataset"</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms_train</span><span class="p">)</span>       <span class="c"># 학습 데이터를 불러와 위의 형태로 전처리</span>
-<span class="n">dataloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>          <span class="c"># 하나의 batch에 이미지 128개</span>
-
+<span class="c"># 학습 데이터를 불러와 위의 형태로 전처리</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s">"./dataset"</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transforms_train</span><span class="p">)</span>  
+<span class="c"># 하나의 batch에 이미지 128개</span>
+<span class="n">dataloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>          
 <span class="s">"""#### &lt;b&gt;모델 학습 및 샘플링&lt;/b&gt;
 
 * 학습을 위해 생성자와 판별자 모델을 초기화합니다.
@@ -320,15 +321,20 @@ Original file is located at
 <span class="n">discriminator</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
 
 <span class="c"># 손실 함수(loss function)</span>
-<span class="n">adversarial_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>       <span class="c"># 손실함수 BCELoss : 마지막 레이어의 값이 0~1(시그모이드 함수 사용 필수) &lt;-&gt; CrossEntropy : 마지막 레이어의 노드 수가 2개 이상</span>
+<span class="c"># 손실함수 BCELoss : 마지막 레이어의 값이 0~1(시그모이드 함수 사용 필수) </span>
+<span class="c"># &lt;-&gt; CrossEntropy : 마지막 레이어의 노드 수가 2개 이상</span>
+<span class="n">adversarial_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>       
 <span class="n">adversarial_loss</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
 
 <span class="c"># 학습률(learning rate) 설정</span>
 <span class="n">lr</span> <span class="o">=</span> <span class="mf">0.0002</span>
 
 <span class="c"># 생성자와 판별자를 위한 최적화 함수</span>
-<span class="n">optimizer_G</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">generator</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">))</span>       <span class="c"># 옵티마이저는 학습 데이터(Train data)셋을 이용하여 모델을 학습 할 때 데이터의 실제 결과와 모델이 예측한 결과를 기반으로 잘 줄일 수 있게 만들어주는 역할을 한다.(Optimize : 최대한 좋게 만들다)</span>
-<span class="n">optimizer_D</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">discriminator</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">))</span>   <span class="c"># https://velog.io/@reversesky/Optimizer%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%A0%95%EB%A6%AC</span>
+<span class="c"># 옵티마이저는 학습 데이터(Train data)셋을 이용하여 모델을 학습 할 때</span>
+<span class="c"># 데이터의 실제 결과와 모델이 예측한 결과를 기반으로 잘 줄일 수 있게 만들어주는 역할을 한다.</span>
+<span class="c"># (Optimize : 최대한 좋게 만들다)</span>
+<span class="n">optimizer_G</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">generator</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">))</span>       
+<span class="n">optimizer_D</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">discriminator</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">))</span>
 <span class="c"># betas 파라미터는 가장 많이 사용되는 하이퍼 파라미터</span>
 
 <span class="s">"""* 모델을 학습하면서 주기적으로 샘플링하여 결과를 확인할 수 있습니다."""</span>
@@ -341,7 +347,8 @@ Original file is located at
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_epochs</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>        <span class="c"># enumerate : 몇 번째 반복인지 튜플로 저장하여 알려줌 (print(i))</span>
+    <span class="c"># enumerate : 몇 번째 반복인지 튜플로 저장하여 알려줌 (print(i))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>        
 
         <span class="c"># 진짜(real) 이미지와 가짜(fake) 이미지에 대한 정답 레이블 생성</span>
         <span class="n">real</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fill_</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="c"># 진짜(real): 1</span>
@@ -353,13 +360,15 @@ Original file is located at
         <span class="n">optimizer_G</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 
         <span class="c"># 랜덤 노이즈(noise) 샘플링</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">latent_dim</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>        <span class="c"># 이미지의 개수 만큼 노이즈를 뽑아서 생성자에 넣는다</span>
+        <span class="c"># 이미지의 개수 만큼 노이즈를 뽑아서 생성자에 넣는다</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">latent_dim</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>        
 
         <span class="c"># 이미지 생성</span>
         <span class="n">generated_imgs</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
         <span class="c"># 생성자(generator)의 손실(loss) 값 계산</span>
-        <span class="n">g_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">generated_imgs</span><span class="p">),</span> <span class="n">real</span><span class="p">)</span>                  <span class="c"># real 이미지로 만들 수 있도록 학습</span>
+        <span class="c"># real 이미지로 만들 수 있도록 학습</span>
+        <span class="n">g_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">generated_imgs</span><span class="p">),</span> <span class="n">real</span><span class="p">)</span>                  
 
         <span class="c"># 생성자(generator) 업데이트</span>
         <span class="n">g_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>       <span class="c"># backward : 기울기 계산</span>
@@ -369,8 +378,10 @@ Original file is located at
         <span class="n">optimizer_D</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 
         <span class="c"># 판별자(discriminator)의 손실(loss) 값 계산</span>
-        <span class="n">real_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">),</span> <span class="n">real</span><span class="p">)</span>                    <span class="c"># 실제 이미지는 실제로 분류</span>
-        <span class="n">fake_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">generated_imgs</span><span class="o">.</span><span class="n">detach</span><span class="p">()),</span> <span class="n">fake</span><span class="p">)</span>      <span class="c"># 생성자의 이미지는 가짜로 분류</span>
+        <span class="c"># 실제 이미지는 실제로 분류</span>
+        <span class="n">real_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">),</span> <span class="n">real</span><span class="p">)</span>   
+        <span class="c"># 생성자의 이미지는 가짜로 분류                 </span>
+        <span class="n">fake_loss</span> <span class="o">=</span> <span class="n">adversarial_loss</span><span class="p">(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">generated_imgs</span><span class="o">.</span><span class="n">detach</span><span class="p">()),</span> <span class="n">fake</span><span class="p">)</span>      
         <span class="n">d_loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">real_loss</span> <span class="o">+</span> <span class="n">fake_loss</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
         <span class="c"># 판별자(discriminator) 업데이트, 원래 논문은 판별자 업데이트 후에 생성자 업데이트</span>
@@ -383,7 +394,8 @@ Original file is located at
             <span class="n">save_image</span><span class="p">(</span><span class="n">generated_imgs</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">25</span><span class="p">],</span> <span class="n">f</span><span class="s">"{done}.png"</span><span class="p">,</span> <span class="n">nrow</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
     <span class="c"># 하나의 epoch이 끝날 때마다 로그(log) 출력</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"[Epoch {epoch}/{n_epochs}] [D loss: {d_loss.item():.6f}] [G loss: {g_loss.item():.6f}] [Elapsed time: {time.time() - start_time:.2f}s]"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"[Epoch {epoch}/{n_epochs}] [D loss: {d_loss.item():.6f}] </span><span class="err">
+</span><span class="s">    [G loss: {g_loss.item():.6f}] [Elapsed time: {time.time() - start_time:.2f}s]"</span><span class="p">)</span>
 
 <span class="s">"""* 생성된 이미지 예시를 출력합니다."""</span>
 
