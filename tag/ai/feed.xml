@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://hwangonjang.github.io/tag/ai/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://hwangonjang.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-11-28T01:51:53+09:00</updated>
+  <updated>2021-11-28T11:19:17+09:00</updated>
   <id>https://hwangonjang.github.io/tag/ai/feed.xml</id>
 
   
@@ -34,8 +34,8 @@
     <entry>
       <title type="html">11월 논문 리뷰 4주차 개념 탐구하기</title>
       <link href="https://hwangonjang.github.io/ai_11m-4" rel="alternate" type="text/html" title="11월 논문 리뷰 4주차 개념 탐구하기" />
-      <published>2020-11-29T01:40:00+09:00</published>
-      <updated>2020-11-29T01:40:00+09:00</updated>
+      <published>2021-11-28T01:40:00+09:00</published>
+      <updated>2021-11-28T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/ai_11m-4</id>
       <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-4">&lt;h1 id=&quot;11월-논문-리뷰-4주차-개념-탐구하기&quot;&gt;11월 논문 리뷰 4주차 개념 탐구하기&lt;/h1&gt;
 &lt;h2 id=&quot;generative-adversarial-nets-에서-사용된-개념-알아보기&quot;&gt;Generative Adversarial Nets 에서 사용된 개념 알아보기&lt;/h2&gt;
@@ -96,18 +96,7 @@
 &lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-6.png?raw=true&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;2-2-jensen-shannon-divergence&quot;&gt;2-2. Jensen-Shannon Divergence&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;KLD는 근사된 확률 분포가 얼마나 원본과 비슷한지를 측정하는 척도 이외에도, 단순히 두 대등한 확률 분포가 얼마나 닮았는지를 측정하는 척도로 쓰일 수 있습니다. 그러나 위의 식에 근거하여 KLD는 역의 관계가 성립하지(Symmetric) 않습니다. 즉, D(KL)(p&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;q) != D(KL)(q&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;p) 입니다. 따라서 이 KLD를 Symmetric 하게 개량한 Jensen-Shannon Divergence를 사용합니다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;KLD는 근사된 확률 분포가 얼마나 원본과 비슷한지를 측정하는 척도 이외에도, 단순히 두 대등한 확률 분포가 얼마나 닮았는지를 측정하는 척도로 쓰일 수 있습니다. 그러나 위의 식에 근거하여 KLD는 역의 관계가 성립하지(Symmetric) 않습니다. 즉, D(KL)(p||q) != D(KL)(q||p) 입니다. 따라서 이 KLD를 Symmetric 하게 개량한 Jensen-Shannon Divergence를 사용합니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/HwanGonJang/HwanGonJang.github.io/blob/master/Pictures/ai_5-7.png?raw=true&quot; /&gt;&lt;/p&gt;
 
@@ -142,8 +131,8 @@
     <entry>
       <title type="html">11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기</title>
       <link href="https://hwangonjang.github.io/ai_11m-3" rel="alternate" type="text/html" title="11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기" />
-      <published>2020-11-22T01:40:00+09:00</published>
-      <updated>2020-11-22T01:40:00+09:00</updated>
+      <published>2021-11-22T01:40:00+09:00</published>
+      <updated>2021-11-22T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/ai_11m-3</id>
       <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-3">&lt;h1 id=&quot;11월-논문-리뷰-3주차-gan-수식-알고리즘-더-자세히-살펴보기&quot;&gt;11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기&lt;/h1&gt;
 &lt;h1 id=&quot;generative-adversarial-nets&quot;&gt;Generative Adversarial Nets&lt;/h1&gt;
@@ -225,8 +214,8 @@
     <entry>
       <title type="html">11월 논문 리뷰 2주차 GAN 코드 실습 Python</title>
       <link href="https://hwangonjang.github.io/ai_11m-2" rel="alternate" type="text/html" title="11월 논문 리뷰 2주차 GAN 코드 실습 Python" />
-      <published>2020-11-15T01:40:00+09:00</published>
-      <updated>2020-11-15T01:40:00+09:00</updated>
+      <published>2021-11-15T01:40:00+09:00</published>
+      <updated>2021-11-15T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/ai_11m-2</id>
       <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-2">&lt;h1 id=&quot;11월-논문-리뷰-2주차-gan-코드-실습-python&quot;&gt;11월 논문 리뷰 2주차 GAN 코드 실습 Python&lt;/h1&gt;
 &lt;h1 id=&quot;generative-adversarial-nets&quot;&gt;Generative Adversarial Nets&lt;/h1&gt;
@@ -471,10 +460,10 @@ Original file is located at
     </entry>
   
     <entry>
-      <title type="html">11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기</title>
-      <link href="https://hwangonjang.github.io/ai_11m-1" rel="alternate" type="text/html" title="11월 논문 리뷰 3주차 GAN 수식, 알고리즘 더 자세히 살펴보기" />
-      <published>2020-11-08T01:40:00+09:00</published>
-      <updated>2020-11-08T01:40:00+09:00</updated>
+      <title type="html">11월 논문 리뷰 1주차 논문리뷰</title>
+      <link href="https://hwangonjang.github.io/ai_11m-1" rel="alternate" type="text/html" title="11월 논문 리뷰 1주차 논문리뷰" />
+      <published>2021-11-08T01:40:00+09:00</published>
+      <updated>2021-11-08T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/ai_11m-1</id>
       <content type="html" xml:base="https://hwangonjang.github.io/ai_11m-1">&lt;h1 id=&quot;11월-논문-리뷰-1주차-논문리뷰&quot;&gt;11월 논문 리뷰 1주차 논문리뷰&lt;/h1&gt;
 
@@ -559,8 +548,8 @@ Original file is located at
     <entry>
       <title type="html">10월 인공지능 논문리뷰</title>
       <link href="https://hwangonjang.github.io/ai_10m" rel="alternate" type="text/html" title="10월 인공지능 논문리뷰" />
-      <published>2020-10-29T01:40:00+09:00</published>
-      <updated>2020-10-29T01:40:00+09:00</updated>
+      <published>2021-10-29T01:40:00+09:00</published>
+      <updated>2021-10-29T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/ai_10m</id>
       <content type="html" xml:base="https://hwangonjang.github.io/ai_10m">&lt;h1 id=&quot;10월-논문리뷰&quot;&gt;10월 논문리뷰&lt;/h1&gt;
 &lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
@@ -723,8 +712,8 @@ Original file is located at
     <entry>
       <title type="html">인공지능과 머신러닝, 딥러닝</title>
       <link href="https://hwangonjang.github.io/ai_basic" rel="alternate" type="text/html" title="인공지능과 머신러닝, 딥러닝" />
-      <published>2020-09-16T01:40:00+09:00</published>
-      <updated>2020-09-16T01:40:00+09:00</updated>
+      <published>2021-09-16T01:40:00+09:00</published>
+      <updated>2021-09-16T01:40:00+09:00</updated>
       <id>https://hwangonjang.github.io/ai_basic</id>
       <content type="html" xml:base="https://hwangonjang.github.io/ai_basic">&lt;h1 id=&quot;인공지능과-머신러닝-딥러닝&quot;&gt;인공지능과 머신러닝, 딥러닝&lt;/h1&gt;
 &lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
